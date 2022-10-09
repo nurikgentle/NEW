@@ -15,9 +15,11 @@ import userYellow from '../../ASSETS/userYellow.svg';
 import loveYellow from '../../ASSETS/loveYellow.svg';
 import cartYellow from '../../ASSETS/cartYellow.svg';
 import vectorBlack from '../../ASSETS/vectorBlack.svg';
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
+    const navigate = useNavigate()
     const { pathname } = useLocation()
     const catalog = matchPath("/catalog", pathname)
 
@@ -39,7 +41,7 @@ const Navbar = () => {
             </div>
             )}
             <div className='second-block'>
-                <h1 style={catalog && {color: '#E0BEA2'}} className='h1'>YANKI</h1>
+                <h1 onClick={() => navigate('/catalog')} style={catalog && {color: '#E0BEA2'}} className='h1'>YANKI</h1>
             </div>
             <div className='third-block'>
               <div className='language'>
