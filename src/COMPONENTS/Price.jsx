@@ -21,8 +21,6 @@ export default function SelectSmall() {
         label="Age"
         onChange={handleChange}
       >
-        <MenuItem value="">
-        </MenuItem>
         <MenuItem value={10}>Самые Дешёвые</MenuItem>
         <MenuItem value={20}>Самые Дорогие</MenuItem>
         <MenuItem value={30}>Популярные</MenuItem>
