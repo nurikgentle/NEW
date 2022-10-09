@@ -1,3 +1,35 @@
+@mixin tablet {
+    @media screen and (max-width: 980px) {
+      @content;
+    }
+}
+@mixin smallerTablet {
+    @media screen and (max-width: 760px) {
+      @content;
+    }
+}
+@mixin phone {
+    @media screen and (max-width: 655px) {
+      @content;
+    }
+}
+@mixin smallerPhone {
+    @media screen and (max-width: 621px) {
+      @content;
+    }
+}
+@mixin small {
+    @media screen and (max-width: 401px) {
+      @content;
+    }
+}
+@mixin tiny {
+    @media screen and (max-width: 361px) {
+      @content;
+    }
+}
+
+
 .catalog {
     max-width: 1440px;
     min-width: 300px;
@@ -28,6 +60,22 @@
         display: flex;
         margin-top: 30px;
         width: 950px;
+
+        @include tablet {
+            width: 630px;
+        }
+        @include phone {
+            width: 560px;
+        }
+        @include smallerPhone {
+            width: 380px;
+        }
+        @include small {
+            width: 338px;
+        }
+        @include tiny {
+            width: 279px;
+        }
         .sidebar {
             display: flex;
             flex-direction: column;
@@ -57,18 +105,43 @@
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
+            position: relative;
+
+            @include tiny{
+                right: 20px;
+            }
             .dropDowns {
                 display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
             }
             .products {
                 display: grid;
                 grid-template-columns: repeat(3, 4fr);
                 grid-column-gap: 15px;
                 margin-top: 30px;
+                @include tablet {
+                    grid-template-columns: repeat(2, 4fr);
+                }
+                @include phone {
+                    grid-template-columns: repeat(1, 4fr);
+                    margin-left: 20%;
+                }
+                @include smallerPhone {
+                    margin-left: 0;
+                }
                 .product {
                     height: 410px;
                     width: 270px;
                     background-color: aqua;
+                    @include smallerTablet {
+                        height: 380px;
+                        width: 240px;
+                    }
+                    @include small {
+                        height: 340px;
+                        width: 200px;
+                    }
                     
                     .img {
                         position: relative;
@@ -83,6 +156,13 @@
                    
                     img {
                         width: 270px;
+
+                        @include smallerTablet {
+                            width: 240px;
+                        }
+                        @include small {
+                            width: 200px;
+                        }
                     }
                     .information {
                         display: flex;
