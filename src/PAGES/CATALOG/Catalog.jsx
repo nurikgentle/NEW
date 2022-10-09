@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Footer from '../../COMPONENTS/FOOTER/Footer'
 import Navbar from '../../COMPONENTS/NAVBAR/Navbar'
 import './Catalog.scss'
@@ -15,6 +15,7 @@ import liked from '../../ASSETS/liked.svg'
 const Catalog = () => {
 
   const [toggle, setToggle] = useState(false)
+  const navigate = useNavigate()
   const {data} = useContext(AuthContext)
   console.log(data);
 
@@ -63,7 +64,7 @@ const Catalog = () => {
               </div>
               <div className='products'>
                   {data.map(item => (
-                    <div className='product'>
+                    <div onClick={() => navigate(`${item.id}`)} className='product'>
                        <div className='img'>
                           <img src={item.imgs[0].imgBig} alt=''/>
                           <img onClick={liking} className='like' src={is} alt=''/>

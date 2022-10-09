@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './MainPage.scss'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../../COMPONENTS/NAVBAR/Navbar';
 import axios from 'axios';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -15,6 +15,7 @@ import Footer from '../../COMPONENTS/FOOTER/Footer';
 const MainPage = () => {
 
   const [data, setData] = useState([])
+  const navigate = useNavigate()
 
   const bigScreen = useMediaQuery({ query: '(max-width: 1171px)' })
 
@@ -62,9 +63,9 @@ const MainPage = () => {
               >
                   {data.map((item) => (
                   <SwiperSlide className='swiper-center'>
-                    <img src={item.imgs[0].img} alt=''/>
+                    <img onClick={() => navigate(`catalog/${item.id}`)} src={item.imgs[0].img} alt=''/>
                     <div>
-                      <h3>{item.title}</h3>
+                      <h3 onClick={() => navigate(`${item.id}`)}>{item.title}</h3>
                     </div>
                     </SwiperSlide>
                   ))}
