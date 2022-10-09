@@ -22,40 +22,41 @@ const Navbar = () => {
     const navigate = useNavigate()
     const { pathname } = useLocation()
     const catalog = matchPath("/catalog", pathname)
+    const productPage = matchPath("/catalog/:id", pathname)
 
   return (
     <nav>
           <div className='first-block'>
-             <div style={catalog && {color: '#E0BEA2'}} onClick={(e) => setIsOpen(!isOpen)}  className='hamburger' >
+             <div style={catalog ? {color: '#E0BEA2'} : productPage ? {color: '#E0BEA2'} : null} onClick={(e) => setIsOpen(!isOpen)}  className='hamburger' >
                 <Hamburger />
               </div>
-                <Link style={catalog && {color: 'black'}}>NEW</Link>
-                <Link style={catalog && {color: 'black'}} to='/catalog'>КАТАЛОГ</Link>
-                <Link style={catalog && {color: 'black'}}>О НАС</Link>
+                <Link style={catalog ? {color: 'black'} : productPage ? {color: 'black'} : null}>NEW</Link>
+                <Link style={catalog ? {color: 'black'} : productPage ? {color: 'black'} : null} to='/catalog'>КАТАЛОГ</Link>
+                <Link style={catalog ? {color: 'black'} : productPage ? {color: 'black'} : null}>О НАС</Link>
             </div>
             {isOpen && (
-            <div style={catalog && {backroundColor: '#E0BEA2'}} className='toggle'>
+            <div style={catalog ? {backroundColor: '#E0BEA2'} : productPage ? {backroundColor: '#E0BEA2'} : null} className='toggle'>
                 <Link>ОПЛАТА И ДОСТАВКА</Link>
                 <Link>УСЛОВИЯ ВОЗВРАТА</Link>
                 <Link>КОНТАКТЫ</Link>
             </div>
             )}
             <div className='second-block'>
-                <h1 onClick={() => navigate('/catalog')} style={catalog && {color: '#E0BEA2'}} className='h1'>YANKI</h1>
+                <h1 onClick={() => navigate('/catalog')} style={catalog ? {color: '#E0BEA2'} : productPage ? {color: '#E0BEA2'} : null} className='h1'>YANKI</h1>
             </div>
             <div className='third-block'>
               <div className='language'>
-                  <p style={catalog && {color: 'black'}}>RU</p>
-                  <img src={catalog ? vectorBlack : Vector} alt=''/>
+                  <p style={catalog ? {color: 'black'} : productPage ? {color: 'black'} : null}>RU</p>
+                  <img src={catalog ? vectorBlack : productPage ? vectorBlack : Vector} alt=''/>
               </div>
-                <p style={catalog && {color: 'black'}} className='uah'>UAH</p>
-                <img className='uah' style={{ left: '100px' }} src={catalog ? vectorBlack : Vector} alt=''/>
+                <p style={catalog ? {color: 'black'} : productPage ? {color: 'black'} : null} className='uah'>UAH</p>
+                <img className='uah' style={{ left: '100px' }} src={catalog ? vectorBlack : productPage ? vectorBlack : Vector} alt=''/>
             </div>
             <div className='fourth-block'>
-                <img className='disappear' src={catalog ? searchBlack : Search} alt='' />
+                <img className='disappear' src={catalog ? searchBlack : productPage ? searchBlack : Search} alt='' />
                 <img className='disappear' onClick={() => signOut(auth)} src={catalog ? userYellow : User} alt='' />
-                <img src={catalog ? loveYellow : Love} alt='' />
-                <img src={catalog ? cartYellow : Cart} alt='' />
+                <img src={catalog ? loveYellow : productPage ? loveYellow : Love} alt='' />
+                <img src={catalog ? cartYellow : productPage ? cartYellow : Cart} alt='' />
             </div>
         </nav>
   )

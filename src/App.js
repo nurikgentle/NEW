@@ -6,6 +6,7 @@ import MainPage from './PAGES/MAINPAGE/MainPage'
 import { useContext } from 'react';
 import { AuthContext } from './CONTEXT/AuthContext'
 import Catalog from './PAGES/CATALOG/Catalog';
+import ProductPage from './PAGES/PRODUCT-PAGE/ProductPage';
 
 function App() {
   const {currentUser} = useContext(AuthContext)
@@ -28,6 +29,9 @@ function App() {
           </ProtectedRoute>} />
           <Route path='/catalog' element={<ProtectedRoute>
             <Catalog />
+          </ProtectedRoute>} />
+          <Route path='/catalog/:id' element={<ProtectedRoute>
+            <ProductPage />
           </ProtectedRoute>} />
       </Routes>
     </div>
