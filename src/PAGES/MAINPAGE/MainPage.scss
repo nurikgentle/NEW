@@ -44,7 +44,7 @@
         background-color: aqua;
         background: url('../../ASSETS/backround.jpg');
         @include phone {
-            background: url("../../ASSETS//single.svg") !important;
+            background: url("../../ASSETS//single.jpg") !important;
             background-size: cover !important;
         }
 
