@@ -88,7 +88,7 @@
         .sidebar {
             display: flex;
             flex-direction: column;
-            background-color: bisque;
+            // background-color: bisque;
             gap: 20px;
             h2 {
                 font-family: 'Raleway';
@@ -109,7 +109,7 @@
             }
         }
         .all-products {
-            background-color: bisque;
+            // background-color: bisque;
             margin-left: 30px;
             display: flex;
             flex-direction: column;
@@ -142,7 +142,7 @@
                 .product {
                     height: 410px;
                     width: 270px;
-                    background-color: aqua;
+                    // background-color: aqua;
                     @include smallerTablet {
                         height: 380px;
                         width: 240px;

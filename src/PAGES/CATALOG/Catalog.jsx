@@ -29,7 +29,7 @@ const Catalog = () => {
     <div className='catalog'>
         <Navbar />
         <div className='switcher'>
-          <Link>Главная</Link>
+          <Link to='/'>Главная</Link>
           <img src={switcher} alt='' />
           <Link>Каталог</Link>
         </div>
