@@ -227,6 +227,11 @@
                             }
                         }
                     }
+                    &:hover {     
+                        box-shadow: 0px 20px 35px #E0BEA2;
+                        transform: translateY(-5px);
+                        cursor: pointer;
+                    }
                 }
             }
         }
