@@ -7,12 +7,12 @@
 
 .productpage {
     max-width: 1440px;
-    min-width: 300px;
+    min-width: 382px;
     margin: auto;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    // overflow-x: hidden;
+    overflow-x: hidden;
 
     .switcher {
         margin: auto;
@@ -317,5 +317,26 @@
     .info {
         margin-right: 0% !important;
 
+    }
+}
+
+
+@media(max-width: 435px) {
+    .bigImage {
+        img {
+            margin-right: -400px !important;
+        }
+    }
+}
+@media(max-width: 382px) {
+    .bigImage {
+        img {
+            margin-right: -260px !important;
+
+        }
+    }
+    .body {
+        position: relative !important;
+        right: 200px !important;
     }
 }
