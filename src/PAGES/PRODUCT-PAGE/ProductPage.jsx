@@ -13,14 +13,16 @@ import f from '../../ASSETS/f.jpg'
 import SelectSize from '../../COMPONENTS/SelectSize'
 import vector from '../../ASSETS/vectorGrey.svg'
 
-const ProductPage = () => {
+const ProductPage = ({ handleClick }) => {
   
   const [open, setOpen] = useState(true)
   let down = open ? 'reverse' : null
   const { id } = useParams()
   const [data, setData] = useState()
   console.log("ID", data);
+
  
+
 
   useEffect(() => {
     const options = {
@@ -81,7 +83,7 @@ const ProductPage = () => {
                        <SelectSize />
                     </div>
                     <div className='buttons'>
-                        <button className='a'>В Корзину</button>
+                        <button onClick={() => handleClick(data)} className='a'>В Корзину</button>
                         <button className='b'>В Избранное</button>
                     </div>
                 </div>
