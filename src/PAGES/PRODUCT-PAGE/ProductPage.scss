@@ -1,3 +1,10 @@
+@mixin tablet {
+    @media screen and (max-width: 980px) {
+      @content;
+    }
+}
+
+
 .productpage {
     max-width: 1440px;
     min-width: 300px;
@@ -5,7 +12,6 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    // overflow-x: hidden;
 
     .switcher {
         margin: auto;
@@ -43,18 +49,33 @@
         margin-top: 20px;
         gap: 30px;
 
+        @include tablet {
+            flex-direction: column;
+            align-items: center;
+        }
+
         .image {
             display: flex;
             gap: 10px;
-            background-color: bisque;
+            // background-color: bisque;
+
+            @include tablet {
+                flex-direction: column;
+                flex-direction: column-reverse;
+                margin-right: 20%
+            }
             
             .images {
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
+
+                @include tablet {
+                    flex-direction: row;
+                }
                 img {
-                    width: 100px;
-                    height: 100px;
+                    width: 82px;
+                    height: 82px;
                 }
             }
             .bigImage {
@@ -68,7 +89,11 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            background-color: aqua;
+            // background-color: aqua;
+
+            @include tablet {
+                margin-right: 29.5%;
+            }
             .texts {
                 display: flex;
                 flex-direction: column;
@@ -126,6 +151,7 @@
                 }
                 .buttons {
                     display: flex;
+                    flex-direction: row;
                     gap: 20px;
                     .a {
                         width: 160px;
@@ -236,4 +262,59 @@
 }
 .reverse {
     transform: rotate(180deg);
+}
+
+@media(max-width: 890px) {
+    .image {
+        margin-right: 25% !important;
+    }
+}
+@media(max-width: 656px) {
+    .image {
+        margin-right: 17% !important;
+    }
+}
+@media(max-width: 632px) {
+    .image {
+        margin-right: 13% !important;
+    }
+    .info {
+        margin-right: 20% !important; 
+    }
+    .buttons {
+        flex-direction: column !important;
+        .a {
+            width: 340px !important;
+        }
+        .b {
+            width: 340px !important;
+        }
+    }
+}
+@media(max-width: 622px) {
+    .image {
+        margin-right: 0% !important;
+        
+        .images {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: center;
+            img {
+                width: 72px !important;
+                height: 72px !important;
+            }
+        }
+        .bigImage {
+            img {
+                width: 200px !important;
+                height: 200px !important;
+            }
+        }
+
+    }
+    .info {
+        margin-right: 0% !important;
+
+    }
 }
