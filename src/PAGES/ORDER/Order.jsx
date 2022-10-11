@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import './Order.scss'
 import switcher from '../../ASSETS/switcher.svg'
@@ -7,7 +7,24 @@ import Footer from '../../COMPONENTS/FOOTER/Footer';
 import CartSize from '../../COMPONENTS/CartSize'
 import trash from '../../ASSETS/trash.svg'
 
-const Order = ({ cart }) => {
+const Order = ({ cart, setCart, handleChange }) => {
+
+    const [price, setPrice] = useState(0);
+
+    const handleRemove = (id) => {
+        const arr = cart.filter((item) => item.id !== id)
+        setCart(arr)
+        handlePrice();
+    }
+
+    const handlePrice = () => {
+        let ans = 0;
+        cart.map((item) => (ans += item.amount * item.price));
+        setPrice(ans)
+    }
+    useEffect(() => {
+        handlePrice()
+    }, [])
 
     console.log("CART", cart);
 
@@ -40,20 +57,21 @@ const Order = ({ cart }) => {
                         <CartSize />
                     </div>
                     <div className='count'>
-                        <div className='add'>-</div>
-                        <h5>1</h5>
-                        <div className='add plus'>+</div>
+                        <div onClick={() => handleChange(item, -1)} className='add'>-</div>
+                        <h5>{item.amount}</h5>
+                        <div onClick={() => handleChange(item, 1)} className='add plus'>+</div>
                     </div>
                     <div className='price'>
                         <h3>{item.price} грн</h3>
-                        <img src={trash} alt=''/>
+                        <img onClick={() => handleRemove(item.id)} src={trash} alt=''/>
                     </div>
                 </div>
                 <hr />
                 </div>
-            
+
             ))
         )}
+        {cart.length > 0 && <div className='itogo'>К оплате: <span>{price} грн</span></div>}
         <Footer />
     </div>
   )

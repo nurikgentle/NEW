@@ -20,9 +20,19 @@ function App() {
   }
 
   const [cart, setCart] = useState([])
+
   const handleClick = (data) => {
     cart.push(data);
     setCart([...cart])
+  }
+
+  const handleChange = (item, d) => {
+    const ind = cart.indexOf(item);
+    const arr = cart;
+    arr[ind].amount += d;
+
+    if(arr[ind].amount === 0) arr[ind].amount = 1
+    setCart([...arr])
   }
 
   return (
@@ -38,7 +48,7 @@ function App() {
           <Route path='/catalog/:id' element={<ProtectedRoute>
             <ProductPage handleClick={handleClick} />
           </ProtectedRoute>} />
-          <Route path='/order' element={<ProtectedRoute><Order cart={cart}  />
+          <Route path='/order' element={<ProtectedRoute><Order handleChange={handleChange} cart={cart} setCart={setCart}  />
           </ProtectedRoute>} />
       </Routes>
     </div>

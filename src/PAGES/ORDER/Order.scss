@@ -225,6 +225,7 @@
                 width: 25px;
                 position: relative;
                 top: 42px;
+                cursor: pointer;
 
                 @include phon {
                     position: relative;
@@ -293,5 +294,46 @@
         font-size: 30px !important;
         width: 300px;
         line-height: 35px !important;
+    }
+}
+.itogo {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #252525;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    position: relative;
+    left: -395px;
+
+    span {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        color: #252525;
+        margin-left: 10px;
+    }
+}
+@media(max-width: 960px) {
+    .itogo {
+        left: -240px;
+    }
+}
+@media(max-width: 636px) {
+    .itogo {
+        left: -220px;
+    }
+}
+@media(max-width: 620px) {
+    .itogo {
+        left: -50px;
     }
 }
