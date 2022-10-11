@@ -7,7 +7,7 @@ import Footer from '../../COMPONENTS/FOOTER/Footer';
 import CartSize from '../../COMPONENTS/CartSize'
 import trash from '../../ASSETS/trash.svg'
 
-const Order = ({ cart, setCart, handleChange }) => {
+const Order = ({ cart, setCart, handleChange, size }) => {
 
     const [price, setPrice] = useState(0);
 
@@ -30,7 +30,7 @@ const Order = ({ cart, setCart, handleChange }) => {
 
   return (
     <div className='order'>
-        <Navbar />
+        {/* <Navbar size={size} /> */}
         <div className='switcher'>
           <Link to='/'>Главная</Link>
           <img src={switcher} alt='' />

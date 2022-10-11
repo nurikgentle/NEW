@@ -28,7 +28,7 @@ const Catalog = () => {
 
   return (
     <div className='catalog'>
-        <Navbar />
+        {/* <Navbar /> */}
         <div className='switcher'>
           <Link to='/'>Главная</Link>
           <img src={switcher} alt='' />

@@ -46,7 +46,7 @@ const ProductPage = ({ handleClick }) => {
 
   return (
     <div className='productpage'>
-        <Navbar />
+        {/* <Navbar /> */}
         <div className='switcher'>
           <Link to='/'>Главная</Link>
           <img src={switcher} alt='' />
@@ -113,7 +113,7 @@ const ProductPage = ({ handleClick }) => {
                 </div>
             </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
     </div>
   )
 }

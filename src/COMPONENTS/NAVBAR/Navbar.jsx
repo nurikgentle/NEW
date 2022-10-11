@@ -17,13 +17,14 @@ import cartYellow from '../../ASSETS/cartYellow.svg';
 import vectorBlack from '../../ASSETS/vectorBlack.svg';
 import { useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ size }) => {
     const [isOpen, setIsOpen] = useState(false)
     const navigate = useNavigate()
     const { pathname } = useLocation()
     const catalog = matchPath("/catalog", pathname)
     const productPage = matchPath("/catalog/:id", pathname)
     const order = matchPath("/order", pathname)
+
 
   return (
     <nav>
@@ -58,6 +59,7 @@ const Navbar = () => {
                 <img className='disappear' onClick={() => signOut(auth)} src={catalog ? userYellow : productPage ? userYellow : order ? userYellow : User} alt='' />
                 <img src={catalog ? loveYellow : productPage ? loveYellow : order ? loveYellow : Love} alt='' />
                 <img onClick={() => navigate("/order")} src={catalog ? cartYellow : productPage ? cartYellow : order ? cartYellow : Cart} alt='' />
+                <div className='numberofitems'>{size}</div>
             </div>
         </nav>
   )
