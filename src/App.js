@@ -37,7 +37,7 @@ function App() {
   }
 
   return (
-    <div className='parent'>  
+    <div>  
       <ProtectedRoute>
          <Navbar size={cart.length} />
       </ProtectedRoute>
