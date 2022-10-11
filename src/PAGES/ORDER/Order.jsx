@@ -21,7 +21,7 @@ const Order = ({ cart }) => {
         </div>
         <h2>Ваш заказ</h2>
         {cart.length === 0 ? (
-            <h6>ВАША КОРЗИНА ПУСТА... ☹</h6>
+            <h6 className='empty-cart'>ВАША КОРЗИНА ПУСТА... ☹</h6>
         ) : (
             cart.map(item => (
                 <div>

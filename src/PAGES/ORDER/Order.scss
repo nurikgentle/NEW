@@ -285,3 +285,13 @@
         }
     }
 }
+.empty-cart {
+    margin-top: 100px;
+}
+@media(max-width: 626px) {
+    .empty-cart {
+        font-size: 30px !important;
+        width: 300px;
+        line-height: 35px !important;
+    }
+}
