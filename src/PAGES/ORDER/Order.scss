@@ -1,11 +1,30 @@
+@mixin tablet {
+    @media screen and (max-width: 980px) {
+      @content;
+    }
+}
+@mixin phone {
+    @media screen and (max-width: 660px) {
+      @content;
+    }
+}
+@mixin phon {
+    @media screen and (max-width: 620px) {
+      @content;
+    }
+}
+
+
 .order {
     max-width: 1440px;
     min-width: 300px;
     margin: auto;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
-    // overflow-x: hidden;
+    overflow-x: hidden;
     text-align: center;
 
     h2 {
@@ -18,6 +37,16 @@
         position: relative;
         right: 430px;
         margin-top: 30px;
+
+        @include tablet {
+            right: 269px;
+        }
+        @include phone {
+            right: 233px;
+        }
+        @include phon {
+            right: 143px;
+        }
     }
     h6 {
         font-size: 40px;
@@ -51,11 +80,21 @@
         gap: 94px;
         margin-top: 30px;
         // background-color: aqua;
+        @include tablet {
+            gap: 5px !important;
+        }
+        @include phon {
+            flex-direction: column;
+        }
 
 
-        .image {
+        .imag {
             display: flex;
             gap: 10px;
+
+            @include phone {
+                gap: 10px;
+            }
 
             img {
                 width: 95px;
@@ -66,6 +105,10 @@
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 29px;
+
+                @include phone {
+                gap: 10px;
+            }
                 h4 {
                     font-family: 'Raleway';
                     font-style: normal;
@@ -95,10 +138,21 @@
                 border-radius: 50px;
                 border: 0.3px solid #252525;
             }
+            @include phon {
+                position: relative;
+                top: 5px;
+                left: 40px;
+            }
         }
         .size {
             position: relative;
             top: 28px;
+
+            @include phon {
+                position: relative;
+                top: -100px;
+                left: 50px;
+            }
         }
       
         .count {
@@ -112,6 +166,12 @@
             border-radius: 5px;
             position: relative;
             top: 37px;
+
+            @include phon {
+                position: relative;
+                top: -100px;
+                left: 127px;
+            }
 
             h5 {
                 font-family: 'Raleway';
@@ -135,6 +195,13 @@
             display: flex;
             gap: 31px;
 
+            @include phon {
+                gap: 10px;
+                position: relative;
+                bottom: 150px;
+                flex-direction: column;
+            }
+
             h3 {
                 font-family: 'Raleway';
                 font-style: normal;
@@ -145,6 +212,12 @@
                 color: #252525;
                 position: relative;
                 top: 46px;
+
+                @include phon {
+                    position: relative;
+                    top: 50px;
+                    left: -70px;
+                }
             }
 
             img {
@@ -152,6 +225,12 @@
                 width: 25px;
                 position: relative;
                 top: 42px;
+
+                @include phon {
+                    position: relative;
+                    top: 50px;
+                    left: 40px;
+                }
             }
         }
     }
@@ -159,5 +238,50 @@
         margin-top: 30px !important;
         width: 953px;
         margin: auto;
+    }
+}
+
+@media(max-width: 402px) {
+    .order {
+        h2 {
+            right: 120px;
+        }
+    }
+}
+@media(max-width: 360px) {
+    .order {
+        h2 {
+            right: 90px;
+        }
+    }
+}
+
+
+@media(max-width: 960px) {
+    .order {
+        hr {
+            width: 630px;
+        }
+    }
+}
+@media(max-width: 660px) {
+    .order {
+        hr {
+            width: 630px;
+        }
+    }
+}
+@media(max-width: 638px) {
+    .order {
+        hr {
+            width: 600px;
+        }
+    }
+}
+@media(max-width: 620px) {
+    .order {
+        hr {
+            width: 250px;
+        }
     }
 }

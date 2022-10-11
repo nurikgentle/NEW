@@ -26,7 +26,7 @@ const Order = ({ cart }) => {
             cart.map(item => (
                 <div>
                 <div className='cartProduct'>
-                    <div className='image'>
+                    <div className='imag'>
                         <img src={item.imgs[0].img} alt=''/>
                         <div>
                             <h4>{item.id}</h4>
