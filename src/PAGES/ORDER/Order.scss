@@ -166,6 +166,7 @@
             border-radius: 5px;
             position: relative;
             top: 37px;
+            z-index: 400000;
 
             @include phon {
                 position: relative;
