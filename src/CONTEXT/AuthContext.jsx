@@ -19,6 +19,7 @@ export const AuthContextProvider = ({ children }) => {
         }
     }, []);
     const [data, setData] = useState([])
+    const products = data
 
     useEffect(() => {
         const options = {
@@ -39,7 +40,7 @@ export const AuthContextProvider = ({ children }) => {
     }, [])
 
     return (        
-        <AuthContext.Provider value={{currentUser, data}}>
+        <AuthContext.Provider value={{currentUser, data, products}}>
            {children}
         </AuthContext.Provider>
     )
