@@ -50,7 +50,10 @@ const ProductPage = ({ handleClick }) => {
         console.error(error);
     });
     }, [])
-
+    
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
   
 
   return (
@@ -125,7 +128,7 @@ const ProductPage = ({ handleClick }) => {
         <h1 className='youlike'>Вам может понравиться</h1>
         <div className='productss'>
                   {products.slice(1, 3).map(item => (
-                    <div onClick={() => navigate(`${item.id}`)} className='product'>
+                    <a href={item.id} className='product'>
                        <div className='img'>
                           <img src={item.imgs[0].imgBig} alt=''/>
                           <img onClick={liking} className='like' src={is} alt=''/>
@@ -140,8 +143,8 @@ const ProductPage = ({ handleClick }) => {
                               <div style={{ backgroundColor: `${item.colors[2].name}` }} className='c'></div>
                           </div>
                        </div>
-                    </div>
-                  ))}
+                    </a>
+            ))}
         </div>
         <Footer />
     </div>

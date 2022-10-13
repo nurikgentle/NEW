@@ -2,21 +2,22 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import './Order.scss'
 import switcher from '../../ASSETS/switcher.svg'
-import Navbar from '../../COMPONENTS/NAVBAR/Navbar';
 import Footer from '../../COMPONENTS/FOOTER/Footer';
 import CartSize from '../../COMPONENTS/CartSize'
 import trash from '../../ASSETS/trash.svg'
+import { collection, doc, setDoc } from 'firebase/firestore'
+import { db } from '../../Firebase';
+import { v4 as uuid } from 'uuid'
 
 const Order = ({ cart, setCart, handleChange, size }) => {
 
+    // ADD TO CHART // REMOVE // CALCULATIONS
     const [price, setPrice] = useState(0);
-
     const handleRemove = (id) => {
         const arr = cart.filter((item) => item.id !== id)
         setCart(arr)
         handlePrice();
     }
-
     const handlePrice = () => {
         let ans = 0;
         cart.map((item) => (ans += item.amount * item.price));
@@ -28,9 +29,45 @@ const Order = ({ cart, setCart, handleChange, size }) => {
 
     console.log("CART", cart);
 
+    // SUBMIT
+    const [name, setName] = useState("")
+    const [surname, setSurname] = useState("")
+    const [email, setEmail] = useState("")
+    const [phone, setPhone] = useState("")
+    const [town, setTown] = useState("")
+    const [mail, setMail] = useState("")
+    const anOrder = collection(db, "orders")
+    let id = uuid()
+    
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        await setDoc(doc(anOrder, id), {
+            name: name,
+            surname: surname,
+            email: email,
+            phone: phone,
+            town: town,
+            mail: mail,
+            cart: cart
+        })
+        .then(() => {
+            alert("ЗАКАЗАН")
+        })
+        .catch((error) => {
+            alert(error.message);
+        })
+        setName('')
+        setSurname('')
+        setEmail('')
+        setPhone('')
+        setTown('')
+        setMail('')
+    }
+
+    
   return (
     <div className='order'>
-        {/* <Navbar size={size} /> */}
         <div className='switcher'>
           <Link to='/'>Главная</Link>
           <img src={switcher} alt='' />
@@ -72,6 +109,29 @@ const Order = ({ cart, setCart, handleChange, size }) => {
             ))
         )}
         {cart.length > 0 && <div className='itogo'>К оплате: <span>{price} грн</span></div>}
+        <form className='form' onSubmit={handleSubmit}>
+            <h1>Оформление заказа</h1>
+            <div className='inputs'>
+                <h2>Персональные данные:</h2>
+               <div className='four-inputs'>
+                    <input type='text' placeholder='Ваше имя' value={name} onChange={(e) => setName(e.target.value)} />
+                    <input type='text' placeholder='Ваше фамилия' value={surname} onChange={(e) => setSurname(e.target.value)} />
+                    <input type='email' placeholder='Ваш e-mail' value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input type='number' placeholder='Ваш телефон' value={phone} onChange={(e) => setPhone(e.target.value)} />
+               </div>
+               <h2 className='dostavka'>Способ доставки:</h2>
+                <div className='two-inputs'>
+                    <input type='text' placeholder='Город' value={town} onChange={(e) => setTown(e.target.value)} />
+                    <input type='text' placeholder='Отделение почты' value={mail} onChange={(e) => setMail(e.target.value)} />
+                </div>
+            </div>
+            <div className='ordering'>
+                <h6>ДОСТАВКА: <span>По тарифам перевозчика</span></h6>
+                <h6>ИТОГО: <span>{price} грн</span></h6>
+                <button type='submit'>ОФОРМИТЬ ЗАКАЗ</button>
+                <p>Нажимая на кнопку «оплатить заказ», я принимаю условия публичной оферты и политики конфиденциальности</p>
+            </div>
+        </form>
         <Footer />
     </div>
   )

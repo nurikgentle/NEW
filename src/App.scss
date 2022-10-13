@@ -33,3 +33,15 @@ button {
 .footer {
     margin: auto !important;
 }
+
+input {
+    &::placeholder {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 200;
+        font-size: 16px;
+        line-height: 19px;
+        color: rgba(37, 37, 37, 0.5);
+        padding-left: 19px;
+    }
+}

@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Footer from '../../COMPONENTS/FOOTER/Footer'
-import Navbar from '../../COMPONENTS/NAVBAR/Navbar'
 import './Catalog.scss'
 import switcher from '../../ASSETS/switcher.svg'
 import Size from '../../COMPONENTS/Size'
