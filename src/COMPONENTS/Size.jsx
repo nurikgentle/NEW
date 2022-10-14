@@ -4,7 +4,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function SelectSmall() {
+export default function SelectSmall({ sortByExpensive, sortByAlphabet, sortBySize }) {
   const [age, setAge] = React.useState('');
 
   const handleChange = (event) => {
@@ -21,9 +21,9 @@ export default function SelectSmall() {
         label="Age"
         onChange={handleChange}
       >
-        <MenuItem value={10}>S</MenuItem>
-        <MenuItem value={20}>M</MenuItem>
-        <MenuItem value={30}>L</MenuItem>
+        <MenuItem value={10} onClick={() => sortBySize('title')}>S</MenuItem>
+        <MenuItem value={20} onClick={() => sortByAlphabet('title')}>M</MenuItem>
+        <MenuItem value={30} onClick={() => sortByExpensive('title')}>L</MenuItem>
       </Select>
     </FormControl>
   );

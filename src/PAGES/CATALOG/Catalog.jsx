@@ -15,7 +15,7 @@ const Catalog = () => {
 
   const [toggle, setToggle] = useState(false)
   const navigate = useNavigate()
-  const {data} = useContext(AuthContext)
+  const {data, setData} = useContext(AuthContext)
   console.log(data);
 
   
@@ -23,6 +23,42 @@ const Catalog = () => {
     setToggle(toggle => !toggle)
   }
   let is = toggle ? liked : like
+
+  //SORTING DATA
+  const sortByExpensive = () => {
+    const sorted = [...data].sort((a, b) => b.price - a.price)
+    console.log("SIZE");
+    console.log("SORTED", sorted);
+    setData(sorted);
+  }
+  const sortByCheap = () => {
+    const sorted = [...data].sort((a, b) => a.price - b.price)
+    console.log("SIZE");
+    console.log("SORTED", sorted);
+    setData(sorted);
+  }
+  const sortByPopularity = () => {
+    const sorted = [...data].sort((a, b) => a.id > b.id && -1)
+    console.log("SIZE");
+    console.log("SORTED", sorted);
+    setData(sorted);
+  }
+  const sortByAlphabet = (col) => {
+    const sorted = [...data].sort((a, b) => 
+    a[col].toLowerCase() > b[col].toLowerCase() ? 1 : -1
+    )
+    console.log("SIZE");
+    console.log("SORTED", sorted);
+    setData(sorted);
+  }
+  const sortBySize = (col) => {
+    const sorted = [...data].sort((a, b) => 
+    a[col].toLowerCase() < b[col].toLowerCase() ? 1 : -1
+    )
+    console.log("SIZE");
+    console.log("SORTED", sorted);
+    setData(sorted);
+  }
 
 
   return (
@@ -36,30 +72,30 @@ const Catalog = () => {
         <div className='inside-catalog'>
            <div className='sidebar'>
               <h2>Каталог</h2>
-              <Link>New</Link>
-              <Link>Bestsellers</Link>
-              <Link>Верхняя одежда</Link>
-              <Link>Шубы</Link>
+              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>New</Link>
+              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Bestsellers</Link>
+              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Верхняя одежда</Link>
+              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Шубы</Link>
               <Link>Тренчи</Link>
-              <Link>Пальто</Link>
-              <Link>Пуховики и жилеты</Link>
-              <Link>Костюмы</Link>
-              <Link>Жакеты</Link>
-              <Link>Платья</Link>
-              <Link>Рубашки и блузы</Link>
-              <Link>Юбки</Link>
-              <Link>Футболки и топы</Link>
-              <Link>Аксессуары</Link>
-              <Link>Sale</Link>
+              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Пальто</Link>
+              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Пуховики и жилеты</Link>
+              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Костюмы</Link>
+              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Жакеты</Link>
+              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Платья</Link>
+              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Рубашки и блузы</Link>
+              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Юбки</Link>
+              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Футболки и топы</Link>
+              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Аксессуары</Link>
+              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Sale</Link>
               <Link>Summer</Link>
-              <Link>Посмотреть все</Link>
+              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Посмотреть все</Link>
            </div>
            <div className='all-products'>
               <div className='dropdowns'>
-                <Size />
-                <Color />
-                <Price />
-                <SortBy />
+                <Size sortByExpensive={sortByExpensive} sortByAlphabet={sortByAlphabet} sortBySize={sortBySize} />
+                <Color sortByCheap={sortByCheap} sortByAlphabet={sortByAlphabet} />
+                <Price sortByExpensive={sortByExpensive} sortByCheap={sortByCheap}  sortByPopularity={sortByPopularity}/>
+                <SortBy sortByExpensive={sortByExpensive} sortByAlphabet={sortByAlphabet} sortBySize={sortBySize} />
               </div>
               <div className='products'>
                   {data.map(item => (
