@@ -24,10 +24,12 @@ const Navbar = ({ size }) => {
     const catalog = matchPath("/catalog", pathname)
     const productPage = matchPath("/catalog/:id", pathname)
     const order = matchPath("/order", pathname)
+    const signin = matchPath("/signin", pathname)
+    const signup = matchPath("/signup", pathname)
 
 
   return (
-    <nav>
+    <nav style={signin ? {display: 'none'} : signup ? {display: 'none'} : null}>
           <div className='first-block'>
              <div style={catalog ? {color: '#E0BEA2'} : productPage ? {color: '#E0BEA2'} : order ? {color: '#E0BEA2'} : null} onClick={(e) => setIsOpen(!isOpen)}  className='hamburger' >
                 <Hamburger />
