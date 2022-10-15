@@ -12,7 +12,7 @@ import { useMediaQuery } from 'react-responsive';
 import Footer from '../../COMPONENTS/FOOTER/Footer';
 
 
-const MainPage = ({ size }) => {
+const MainPage = ({ size, sizes }) => {
 
   const [data, setData] = useState([])
   const navigate = useNavigate()
@@ -43,7 +43,7 @@ const MainPage = ({ size }) => {
   return (
     <div className='wrapper-all'>
         <div className='first-container'>
-        <Navbar size={size} />
+        <Navbar size={size} sizes={sizes} />
           <div className='after-navbar'>
             <h1>Новая Коллекция</h1>
             <div></div>

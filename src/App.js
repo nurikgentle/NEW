@@ -50,7 +50,7 @@ function App() {
         <Route path='/signup' element={<SignUp />} />
         <Route path='/signin' element={<SignIn />} />
         <Route path='/' element={<ProtectedRoute>
-            <MainPage size={cart.length} />
+            <MainPage size={cart.length} sizes={favourite.length} />
           </ProtectedRoute>} />
           <Route path='/catalog' element={<ProtectedRoute><Catalog handleFavourite={handleFavourite}  />
           </ProtectedRoute>} />
