@@ -38,7 +38,7 @@ const Navbar = ({ size, sizes }) => {
                 <Link style={catalog ? {color: 'black'} : productPage ? {color: 'black'} : order ? {color: 'black'} : favourite ? {color: 'black'} : null}>NEW</Link>
                 <Link style={catalog ? {color: 'black'} : productPage ? {color: 'black'} : order ? {color: 'black'} : favourite ? {color: 'black'} : null} to='/catalog'>КАТАЛОГ</Link>
                 <Link style={catalog ? {color: 'black'} : productPage ? {color: 'black'} : order ? {color: 'black'} : favourite ? {color: 'black'} : null}>О НАС</Link>
-            </div>
+          </div>
             {isOpen && (
             <div style={catalog ? {backroundColor: '#E0BEA2'} : productPage ? {backroundColor: '#E0BEA2'} : order ? {backroundColor: '#E0BEA2'} : favourite ? {backroundColor: '#E0BEA2'} : null} className='toggle'>
                 <Link>ОПЛАТА И ДОСТАВКА</Link>

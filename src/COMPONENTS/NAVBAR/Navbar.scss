@@ -34,6 +34,8 @@
 
 nav {
     min-width: 380px;
+    max-width: 1540px;
+    margin: auto;
     height: 60px;
     display: flex;
     flex-wrap: wrap;
@@ -48,6 +50,7 @@ nav {
         gap: 25px;
         background-color: #FFFFFF;
         top: 15px;
+        left: 328px !important;
         height: 60px;
         width: 550px;
         align-items: center;
@@ -87,6 +90,7 @@ nav {
         margin-top: 34px;
         position: relative;
         margin-left: 20px;
+        position: relative;
 
         @include tablet {
           display: none;
