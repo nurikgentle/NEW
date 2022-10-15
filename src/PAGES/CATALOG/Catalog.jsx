@@ -11,7 +11,7 @@ import { AuthContext } from '../../CONTEXT/AuthContext'
 import like from '../../ASSETS/like.svg'
 import liked from '../../ASSETS/liked.svg'
 
-const Catalog = () => {
+const Catalog = ({ handleFavourite }) => {
 
   const [toggle, setToggle] = useState(false)
   const navigate = useNavigate()
@@ -99,12 +99,12 @@ const Catalog = () => {
               </div>
               <div className='products'>
                   {data.map(item => (
-                    <div onClick={() => navigate(`${item.id}`)} className='product'>
+                    <div className='product'>
                        <div className='img'>
-                          <img src={item.imgs[0].imgBig} alt=''/>
-                          <img onClick={liking} className='like' src={is} alt=''/>
+                          <img onClick={() => navigate(`${item.id}`)} src={item.imgs[0].imgBig} alt=''/>
+                          <img onClick={() => handleFavourite(item)} className='like' src={is} alt=''/>
                        </div>
-                       <div className='information'>
+                       <div onClick={() => navigate(`${item.id}`)} className='information'>
                           <h4>{item.title}</h4>
                           <h3>{item.price} грн</h3>
                           <h5>{item.sizes[0].size} {item.sizes[1].size} {item.sizes[2].size}</h5>

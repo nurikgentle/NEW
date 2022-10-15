@@ -9,7 +9,7 @@ import { collection, doc, setDoc } from 'firebase/firestore'
 import { db } from '../../Firebase';
 import { v4 as uuid } from 'uuid'
 
-const Order = ({ cart, setCart, handleChange, size }) => {
+const Order = ({ cart, setCart, handleChange, size, handleFavourite }) => {
 
     // ADD TO CHART // REMOVE // CALCULATIONS
     const [price, setPrice] = useState(0);

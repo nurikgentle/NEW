@@ -9,6 +9,7 @@ import Catalog from './PAGES/CATALOG/Catalog';
 import ProductPage from './PAGES/PRODUCT-PAGE/ProductPage';
 import Order from './PAGES/ORDER/Order';
 import Navbar from './COMPONENTS/NAVBAR/Navbar';
+import Favourite from './PAGES/FAVOURITE/Favourite';
 
 function App() {
   const {currentUser} = useContext(AuthContext)
@@ -21,11 +22,17 @@ function App() {
   }
 
   const [cart, setCart] = useState([])
+  const [favourite, setFavourite] = useState([])
 
   const handleClick = (data) => {
     cart.push(data);
     setCart([...cart])
   }
+  const handleFavourite = (data) => {
+    favourite.push(data);
+    setFavourite([...favourite])
+  }
+  
 
   const handleChange = (item, d) => {
     const ind = cart.indexOf(item);
@@ -38,22 +45,21 @@ function App() {
 
   return (
     <div>  
-      {/* <ProtectedRoute> */}
-         <Navbar size={cart.length} />
-      {/* </ProtectedRoute> */}
+      <Navbar size={cart.length} sizes={favourite.length} />
       <Routes>
         <Route path='/signup' element={<SignUp />} />
         <Route path='/signin' element={<SignIn />} />
         <Route path='/' element={<ProtectedRoute>
             <MainPage size={cart.length} />
           </ProtectedRoute>} />
-          <Route path='/catalog' element={<ProtectedRoute><Catalog  />
+          <Route path='/catalog' element={<ProtectedRoute><Catalog handleFavourite={handleFavourite}  />
           </ProtectedRoute>} />
           <Route path='/catalog/:id' element={<ProtectedRoute>
-            <ProductPage handleClick={handleClick} />
+            <ProductPage handleClick={handleClick} handleFavourite={handleFavourite} />
           </ProtectedRoute>} />
           <Route path='/order' element={<ProtectedRoute><Order handleChange={handleChange} cart={cart} size={cart.length} setCart={setCart}  />
           </ProtectedRoute>} />
+          <Route path='/favourite' element={<ProtectedRoute><Favourite favourite={favourite} /></ProtectedRoute>} />
       </Routes>
     </div>
   );
