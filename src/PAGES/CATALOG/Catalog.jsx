@@ -11,7 +11,7 @@ import { AuthContext } from '../../CONTEXT/AuthContext'
 import like from '../../ASSETS/like.svg'
 import liked from '../../ASSETS/liked.svg'
 
-const Catalog = ({ handleFavourite }) => {
+const Catalog = ({ handleFavourite, search, setSearch }) => {
 
   const [toggle, setToggle] = useState(false)
   const navigate = useNavigate()
@@ -72,21 +72,21 @@ const Catalog = ({ handleFavourite }) => {
         <div className='inside-catalog'>
            <div className='sidebar'>
               <h2>Каталог</h2>
-              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>New</Link>
-              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Bestsellers</Link>
-              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Верхняя одежда</Link>
-              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Шубы</Link>
+              <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>New</Link>
+              <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>Bestsellers</Link>
+              <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>Верхняя одежда</Link>
+              <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>Шубы</Link>
               <Link>Тренчи</Link>
-              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Пальто</Link>
-              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Пуховики и жилеты</Link>
-              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Костюмы</Link>
-              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Жакеты</Link>
-              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Платья</Link>
-              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Рубашки и блузы</Link>
-              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Юбки</Link>
-              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Футболки и топы</Link>
-              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Аксессуары</Link>
-              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Sale</Link>
+              <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>Пальто</Link>
+              <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>Пуховики и жилеты</Link>
+              <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>Костюмы</Link>
+              <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>Жакеты</Link>
+              <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>Платья</Link>
+              <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>Рубашки и блузы</Link>
+              <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>Юбки</Link>
+              <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>Футболки и топы</Link>
+              <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>Аксессуары</Link>
+              <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>Sale</Link>
               <Link>Summer</Link>
               <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Посмотреть все</Link>
            </div>
@@ -98,7 +98,9 @@ const Catalog = ({ handleFavourite }) => {
                 <SortBy sortByExpensive={sortByExpensive} sortByAlphabet={sortByAlphabet} sortBySize={sortBySize} />
               </div>
               <div className='products'>
-                  {data.map(item => (
+                  {data.filter((item) => {
+                     return search.toLowerCase() === '' ? item : item.title.toLowerCase().includes(search)
+                  }).map(item => (
                     <div className='product'>
                        <div className='img'>
                           <img onClick={() => navigate(`${item.id}`)} src={item.imgs[0].imgBig} alt=''/>

@@ -13,6 +13,7 @@ import Favourite from './PAGES/FAVOURITE/Favourite';
 
 function App() {
   const {currentUser} = useContext(AuthContext)
+  const [search, setSearch] = useState('')
  
   const ProtectedRoute = ({children}) => {
     if(!currentUser) {
@@ -45,14 +46,14 @@ function App() {
 
   return (
     <div>  
-      <Navbar size={cart.length} sizes={favourite.length} />
+      <Navbar search={search} setSearch={setSearch} size={cart.length} sizes={favourite.length} />
       <Routes>
         <Route path='/signup' element={<SignUp />} />
         <Route path='/signin' element={<SignIn />} />
         <Route path='/' element={<ProtectedRoute>
             <MainPage size={cart.length} sizes={favourite.length} />
           </ProtectedRoute>} />
-          <Route path='/catalog' element={<ProtectedRoute><Catalog handleFavourite={handleFavourite}  />
+          <Route path='/catalog' element={<ProtectedRoute><Catalog search={search} setSearch={setSearch} handleFavourite={handleFavourite}  />
           </ProtectedRoute>} />
           <Route path='/catalog/:id' element={<ProtectedRoute>
             <ProductPage handleClick={handleClick} handleFavourite={handleFavourite} />

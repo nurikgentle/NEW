@@ -30,8 +30,6 @@ const ProductPage = ({ handleClick, handleFavourite }) => {
   }
   let is = toggle ? liked : liked
 
- 
-
 
   useEffect(() => {
     const options = {

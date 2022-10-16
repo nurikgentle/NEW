@@ -17,8 +17,9 @@ import cartYellow from '../../ASSETS/cartYellow.svg';
 import vectorBlack from '../../ASSETS/vectorBlack.svg';
 import { useNavigate } from "react-router-dom";
 
-const Navbar = ({ size, sizes }) => {
+const Navbar = ({ size, sizes, search, setSearch }) => {
     const [isOpen, setIsOpen] = useState(false)
+    const [input, setInput] = useState(false)
     const navigate = useNavigate()
     const { pathname } = useLocation()
     const catalog = matchPath("/catalog", pathname)
@@ -27,6 +28,8 @@ const Navbar = ({ size, sizes }) => {
     const signin = matchPath("/signin", pathname)
     const signup = matchPath("/signup", pathname)
     const favourite = matchPath("/favourite", pathname)
+
+   
 
 
   return (
@@ -58,7 +61,11 @@ const Navbar = ({ size, sizes }) => {
                 <img className='uah' style={{ left: '100px' }} src={catalog ? vectorBlack : productPage ? vectorBlack : order ? vectorBlack : favourite ? vectorBlack : Vector} alt=''/>
             </div>
             <div className='fourth-block'>
-                <img className='disappear' src={catalog ? searchBlack : productPage ? searchBlack : order ? searchBlack : favourite ? searchBlack : Search} alt='' />
+                <img onClick={() => setInput(input => !input)} className='disappear' src={catalog ? searchBlack : productPage ? searchBlack : order ? searchBlack : favourite ? searchBlack : Search} alt='' />
+                 {input && <input onChange={(e) => setSearch(e.target.value)} className='search-input' type='text' placeholder='Введите ваш запрос' />}
+                 {input && <svg onClick={() => navigate("/catalog")} className='svg' width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.8374 10.7933L15 13.9552L13.9552 15L10.7933 11.8374C9.61682 12.7805 8.15349 13.2935 6.64566 13.2913C2.97726 13.2913 0 10.3141 0 6.64566C0 2.97726 2.97726 0 6.64566 0C10.3141 0 13.2913 2.97726 13.2913 6.64566C13.2935 8.15349 12.7805 9.61682 11.8374 10.7933ZM10.3562 10.2454C11.2933 9.28169 11.8166 7.98988 11.8145 6.64566C11.8145 3.7895 9.50108 1.47681 6.64566 1.47681C3.7895 1.47681 1.47681 3.7895 1.47681 6.64566C1.47681 9.50108 3.7895 11.8145 6.64566 11.8145C7.98988 11.8166 9.28169 11.2933 10.2454 10.3562L10.3562 10.2454Z" fill="#252525"/>
+                  </svg>} 
                 <img className='disappear' onClick={() => signOut(auth)} src={catalog ? userYellow : productPage ? userYellow : order ? userYellow : favourite ? userYellow : User} alt='' />
                 <img onClick={() => navigate("/favourite")} src={catalog ? loveYellow : productPage ? loveYellow : order ? loveYellow : favourite ? loveYellow : Love} alt='' />
                 <div className='numberofitemss'>{sizes}</div>
