@@ -37,9 +37,6 @@ const MainPage = ({ size, sizes }) => {
   });
 }, [])
 
-
-
-
   return (
     <div className='wrapper-all'>
         <div className='first-container'>

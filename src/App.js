@@ -10,9 +10,11 @@ import ProductPage from './PAGES/PRODUCT-PAGE/ProductPage';
 import Order from './PAGES/ORDER/Order';
 import Navbar from './COMPONENTS/NAVBAR/Navbar';
 import Favourite from './PAGES/FAVOURITE/Favourite';
+import Exchange from './PAGES/EXCHANGE/Exchange';
 
 function App() {
-  const {currentUser} = useContext(AuthContext)
+  const {currentUser} = useContext(AuthContext);
+
  
   const ProtectedRoute = ({children}) => {
     if(!currentUser) {
@@ -60,6 +62,7 @@ function App() {
           <Route path='/order' element={<ProtectedRoute><Order handleChange={handleChange} cart={cart} size={cart.length} setCart={setCart}  />
           </ProtectedRoute>} />
           <Route path='/favourite' element={<ProtectedRoute><Favourite favourite={favourite} /></ProtectedRoute>} />
+          <Route path='/exchange' element={<ProtectedRoute><Exchange /></ProtectedRoute>} />
       </Routes>
     </div>
   );

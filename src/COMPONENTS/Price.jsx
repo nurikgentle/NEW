@@ -4,9 +4,9 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function SelectSmall({ sortByExpensive, sortByCheap, sortByPopularity }) {
+const SelectSmall = React.memo(({ sortByExpensive, sortByCheap, sortByPopularity }) => {
   const [age, setAge] = React.useState('');
-
+  
   const handleChange = (event) => {
     setAge(event.target.value);
   };
@@ -19,12 +19,19 @@ export default function SelectSmall({ sortByExpensive, sortByCheap, sortByPopula
         id="demo-select-small"
         value={age}
         label="Age"
-        onChange={handleChange}
-      >
-        <MenuItem value={10} onClick={() => sortByCheap()}>Самые Дешёвые</MenuItem>
-        <MenuItem value={20} onClick={() => sortByExpensive()}>Самые Дорогие</MenuItem>
-        <MenuItem value={30} onClick={() => sortByPopularity()}>Популярные</MenuItem>
+        onChange={handleChange}>
+        <MenuItem value={10} onClick={() => sortByCheap()}>
+          Самые Дешёвые
+        </MenuItem>
+        <MenuItem value={20} onClick={() => sortByExpensive()}>
+          Самые Дорогие
+        </MenuItem>
+        <MenuItem value={30} onClick={() => sortByPopularity()}>
+          Популярные
+        </MenuItem>
       </Select>
     </FormControl>
   );
-}
+});
+
+export default SelectSmall;

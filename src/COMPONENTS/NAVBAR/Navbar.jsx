@@ -42,7 +42,7 @@ const Navbar = ({ size, sizes }) => {
             {isOpen && (
             <div style={catalog ? {backroundColor: '#E0BEA2'} : productPage ? {backroundColor: '#E0BEA2'} : order ? {backroundColor: '#E0BEA2'} : favourite ? {backroundColor: '#E0BEA2'} : null} className='toggle'>
                 <Link>ОПЛАТА И ДОСТАВКА</Link>
-                <Link>УСЛОВИЯ ВОЗВРАТА</Link>
+                <Link to='/exchange'>УСЛОВИЯ ВОЗВРАТА</Link>
                 <Link>КОНТАКТЫ</Link>
             </div>
             )}
