@@ -31,7 +31,6 @@
 
 
 
-
 nav {
     min-width: 380px;
     max-width: 1540px;
@@ -42,33 +41,6 @@ nav {
     justify-content: center;
     gap: 60px;
     position: relative;
-
-    .toggle {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        gap: 25px;
-        background-color: #FFFFFF;
-        top: 15px;
-        left: 328px !important;
-        height: 60px;
-        width: 550px;
-        align-items: center;
-        justify-content: center;
-        left: 300px;
-        border-radius: 20px;
-        z-index: 10;
-        position: absolute;
-      a {
-        font-family: 'Raleway';
-        font-style: normal;
-        font-weight: 300;
-        font-size: 18px;
-        line-height: 21px;
-        color: #252525; 
-        text-decoration: none;
-      }
-    }
 
     @include smaller {
         gap: 30px;
@@ -110,6 +82,7 @@ nav {
     }
 
     .second-block {
+        position: relative;
         h1 {
             margin-top: 30px !important;
             color: white;
@@ -227,7 +200,35 @@ nav {
             }
         }
     }
+    
+    .toggle {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 25px;
+        background-color: #FFFFFF;
+        height: 60px;
+        width: 550px;
+        align-items: center;
+        justify-content: center;
+        left: 310px;
+        top: 15px;
+        border-radius: 20px;
+        z-index: 10;
+        position: absolute;
+
+      a {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 21px;
+        color: #252525; 
+        text-decoration: none;
+      }
+    }
 }
+
 
 @media(max-width: 1385px) {
     .toggle {
@@ -278,9 +279,10 @@ nav {
     }
 }
 
+
 @media(max-width: 980px) {
     .toggle {
-        left: 230px !important;
+        left: 210px !important;
         width: 550px !important;
     }
 }

@@ -10,6 +10,7 @@ import ProductPage from './PAGES/PRODUCT-PAGE/ProductPage';
 import Order from './PAGES/ORDER/Order';
 import Navbar from './COMPONENTS/NAVBAR/Navbar';
 import Favourite from './PAGES/FAVOURITE/Favourite';
+import Contacts from './PAGES/CONTACTS/Contacts';
 
 function App() {
   const {currentUser} = useContext(AuthContext)
@@ -61,6 +62,7 @@ function App() {
           <Route path='/order' element={<ProtectedRoute><Order handleChange={handleChange} cart={cart} size={cart.length} setCart={setCart}  />
           </ProtectedRoute>} />
           <Route path='/favourite' element={<ProtectedRoute><Favourite favourite={favourite} /></ProtectedRoute>} />
+          <Route path='/contacts' element={<ProtectedRoute><Contacts /></ProtectedRoute>} />
       </Routes>
     </div>
   );
