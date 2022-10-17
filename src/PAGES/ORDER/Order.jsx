@@ -114,15 +114,15 @@ const Order = ({ cart, setCart, handleChange, size, handleFavourite }) => {
             <div className='inputs'>
                 <h2>Персональные данные:</h2>
                <div className='four-inputs'>
-                    <input type='text' placeholder='Ваше имя' value={name} onChange={(e) => setName(e.target.value)} />
-                    <input type='text' placeholder='Ваше фамилия' value={surname} onChange={(e) => setSurname(e.target.value)} />
-                    <input type='email' placeholder='Ваш e-mail' value={email} onChange={(e) => setEmail(e.target.value)} />
-                    <input type='number' placeholder='Ваш телефон' value={phone} onChange={(e) => setPhone(e.target.value)} />
+                    <input required type='text' placeholder='Ваше имя' value={name} onChange={(e) => setName(e.target.value)} />
+                    <input required type='text' placeholder='Ваше фамилия' value={surname} onChange={(e) => setSurname(e.target.value)} />
+                    <input required type='email' placeholder='Ваш e-mail' value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input required type='number' placeholder='Ваш телефон' value={phone} onChange={(e) => setPhone(e.target.value)} />
                </div>
                <h2 className='dostavka'>Способ доставки:</h2>
                 <div className='two-inputs'>
-                    <input type='text' placeholder='Город' value={town} onChange={(e) => setTown(e.target.value)} />
-                    <input type='text' placeholder='Отделение почты' value={mail} onChange={(e) => setMail(e.target.value)} />
+                    <input required type='text' placeholder='Город' value={town} onChange={(e) => setTown(e.target.value)} />
+                    <input required type='text' placeholder='Отделение почты' value={mail} onChange={(e) => setMail(e.target.value)} />
                 </div>
             </div>
             <div className='ordering'>
