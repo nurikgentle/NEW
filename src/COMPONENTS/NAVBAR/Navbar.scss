@@ -161,6 +161,10 @@ nav {
             top: 52px;
             left: 92px;
             cursor: pointer;
+            
+            @include smaller {
+                display: none;
+            }
         }
 
         .search-input {
@@ -192,6 +196,7 @@ nav {
             width: 25px;
             height: 25px;
             cursor: pointer;
+
         }
 
         .disappear {
@@ -211,7 +216,7 @@ nav {
         width: 550px;
         align-items: center;
         justify-content: center;
-        left: 310px;
+        left: 316px;
         top: 15px;
         border-radius: 20px;
         z-index: 10;

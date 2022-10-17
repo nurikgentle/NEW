@@ -72,7 +72,7 @@ const Catalog = ({ handleFavourite, search, setSearch }) => {
         <div className='inside-catalog'>
            <div className='sidebar'>
               <h2>Каталог</h2>
-              <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>New</Link>
+              <Link onClick={() => alert('НОВЫХ ПОСТУПЛЕНИЙ НЕТ ☹')}>New</Link>
               <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>Bestsellers</Link>
               <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>Верхняя одежда</Link>
               <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>Шубы</Link>
@@ -87,8 +87,8 @@ const Catalog = ({ handleFavourite, search, setSearch }) => {
               <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>Футболки и топы</Link>
               <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>Аксессуары</Link>
               <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>Sale</Link>
-              <Link>Summer</Link>
-              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Посмотреть все</Link>
+              <Link onClick={() => alert('ЭТИХ ТОВАРОВ НЕТ 😭')}>Summer</Link>
+              <a href='/catalog'>Посмотреть все</a>
            </div>
            <div className='all-products'>
               <div className='dropdowns'>

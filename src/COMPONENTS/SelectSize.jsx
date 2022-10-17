@@ -4,7 +4,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function SelectSmall() {
+export default React.memo(function SelectSmall() {
   const [age, setAge] = React.useState('');
 
   const handleChange = (event) => {
@@ -27,4 +27,4 @@ export default function SelectSmall() {
       </Select>
     </FormControl>
   );
-}
+})

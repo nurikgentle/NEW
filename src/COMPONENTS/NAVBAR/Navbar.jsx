@@ -56,11 +56,11 @@ const Navbar = ({ size, sizes, search, setSearch }) => {
             </div>
             <div className='third-block'>
               <div className='language'>
-                  <p style={catalog ? {color: 'black'} : productPage ? {color: 'black'} : order ? {color: 'black'} : favourite ? {color: 'black'} : contacts ? {color: 'black'} : exchange ? {color: 'black'} : null}>RU</p>
-                  <img src={catalog ? vectorBlack : productPage ? vectorBlack : order ? vectorBlack : favourite ? vectorBlack : contacts ? vectorBlack : exchange ? vectorBlack : Vector} alt=''/>
+                  <p onClick={() => alert("Ошибка с сервером ☹")} style={catalog ? {color: 'black'} : productPage ? {color: 'black'} : order ? {color: 'black'} : favourite ? {color: 'black'} : contacts ? {color: 'black'} : exchange ? {color: 'black'} : null}>RU</p>
+                  <img onClick={() => alert("Ошибка с сервером ☹")}  src={catalog ? vectorBlack : productPage ? vectorBlack : order ? vectorBlack : favourite ? vectorBlack : contacts ? vectorBlack : exchange ? vectorBlack : Vector} alt=''/>
               </div>
-                <p style={catalog ? {color: 'black'} : productPage ? {color: 'black'} : order ? {color: 'black'} : favourite ? {color: 'black'} : contacts ? {color: 'black'} : exchange ? {color: 'black'} : null} className='uah'>UAH</p>
-                <img className='uah' style={{ left: '100px' }} src={catalog ? vectorBlack : productPage ? vectorBlack : order ? vectorBlack : favourite ? vectorBlack : contacts ? vectorBlack : exchange ? vectorBlack : Vector} alt=''/>
+                <p onClick={() => alert("Ошибка с сервером ☹")}  style={catalog ? {color: 'black'} : productPage ? {color: 'black'} : order ? {color: 'black'} : favourite ? {color: 'black'} : contacts ? {color: 'black'} : exchange ? {color: 'black'} : null} className='uah'>UAH</p>
+                <img onClick={() => alert("Ошибка с сервером ☹")}  className='uah' style={{ left: '100px' }} src={catalog ? vectorBlack : productPage ? vectorBlack : order ? vectorBlack : favourite ? vectorBlack : contacts ? vectorBlack : exchange ? vectorBlack : Vector} alt=''/>
             </div>
             <div className='fourth-block'>
                 <img onClick={() => setInput(input => !input)} className='disappear' src={catalog ? searchBlack : productPage ? searchBlack : order ? searchBlack : favourite ? searchBlack : contacts ? searchBlack : exchange ? searchBlack : Search} alt='' />
