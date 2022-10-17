@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './Favourite.scss'
 import switcher from '../../ASSETS/switcher.svg'
@@ -15,6 +15,10 @@ const Favourite = ({ favourite }) => {
         setToggle(toggle => !toggle)
       }
       let is = toggle ? liked : like
+
+      useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     
   return (

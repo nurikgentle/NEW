@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Exchange.scss';
 import switcher from '../../ASSETS/switcher.svg';
 import { Link } from 'react-router-dom';
 import Footer from '../../COMPONENTS/FOOTER/Footer';
 
 const Exchange = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+}, [])
+
   return (
     <div className="exchange">
       <div className="switcher">

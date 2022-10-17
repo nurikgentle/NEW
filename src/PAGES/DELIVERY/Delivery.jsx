@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../../COMPONENTS/FOOTER/Footer';
 import './Delivery.scss';
 import switcher from '../../ASSETS/switcher.svg';
 
 const Delivery = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
   return (
     <div className='delivery'>
         <div className='switchers' id='key'>
