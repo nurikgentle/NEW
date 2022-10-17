@@ -90,7 +90,7 @@ const Order = ({ cart, setCart, handleChange, size, handleFavourite }) => {
                     <div className='color'>
                         <div style={{ backgroundColor: `${item.colors[2].name}` }}></div>
                     </div>
-                    <div className='size'>
+                    <div className='size' style={{ zIndex: "1000" }}>
                         <CartSize />
                     </div>
                     <div className='count'>

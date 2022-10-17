@@ -76,7 +76,7 @@ const Catalog = ({ handleFavourite, search, setSearch }) => {
               <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>Bestsellers</Link>
               <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>Верхняя одежда</Link>
               <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>Шубы</Link>
-              <Link>Тренчи</Link>
+              <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>Тренчи</Link>
               <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>Пальто</Link>
               <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>Пуховики и жилеты</Link>
               <Link onClick={() => alert('ПОКА ЧТО ЭТИ ТОВАРЫ НЕ СШИЛИ ☹')}>Костюмы</Link>

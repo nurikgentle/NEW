@@ -12,7 +12,7 @@ export default function SelectSmall() {
   };
 
   return (
-    <FormControl sx={{ m: 1, minWidth: 98 }} size="small">
+    <FormControl sx={{ m: 1, minWidth: 98, zIndex:'1000' }} size="small" >
       <InputLabel id="demo-select-small">L</InputLabel>
       <Select
         labelId="demo-select-small"
@@ -20,8 +20,9 @@ export default function SelectSmall() {
         value={age}
         label="Age"
         onChange={handleChange}
+        sx={{ zIndex: '1000' }}
       >
-        <MenuItem value={10}>S</MenuItem>
+        <MenuItem sx={{ zIndex: '1000' }} value={10}>S</MenuItem>
         <MenuItem value={20}>M</MenuItem>
         <MenuItem value={30}>L</MenuItem>
       </Select>
