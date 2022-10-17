@@ -7,7 +7,7 @@ import switcher from '../../ASSETS/switcher.svg';
 const Delivery = () => {
   return (
     <div className='delivery'>
-        <div className='switcher'>
+        <div className='switchers' id='key'>
           <Link to='/'>Главная</Link>
           <img src={switcher} alt='' />
           <Link>Оплата и доставка</Link>
