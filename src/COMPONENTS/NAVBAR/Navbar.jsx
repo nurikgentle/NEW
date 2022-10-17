@@ -56,7 +56,7 @@ const Navbar = ({ size, sizes, search, setSearch }) => {
             </div>
             <div className='third-block'>
               <div className='language'>
-                  <p style={catalog ? {color: 'black'} : productPage ? {color: 'black'} : order ? {color: 'black'} : favourite ? {color: 'black'} : contacts ? {color: 'black'} : exchange ? {color: 'exchange'} : null}>RU</p>
+                  <p style={catalog ? {color: 'black'} : productPage ? {color: 'black'} : order ? {color: 'black'} : favourite ? {color: 'black'} : contacts ? {color: 'black'} : exchange ? {color: 'black'} : null}>RU</p>
                   <img src={catalog ? vectorBlack : productPage ? vectorBlack : order ? vectorBlack : favourite ? vectorBlack : contacts ? vectorBlack : exchange ? vectorBlack : Vector} alt=''/>
               </div>
                 <p style={catalog ? {color: 'black'} : productPage ? {color: 'black'} : order ? {color: 'black'} : favourite ? {color: 'black'} : contacts ? {color: 'black'} : exchange ? {color: 'black'} : null} className='uah'>UAH</p>
