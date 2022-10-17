@@ -41,9 +41,9 @@ const Navbar = ({ size, sizes, search, setSearch }) => {
              <div style={catalog ? {color: '#E0BEA2'} : productPage ? {color: '#E0BEA2'} : order ? {color: '#E0BEA2'} : favourite ? {color: '#E0BEA2'} : contacts ? {color: '#E0BEA2'} : exchange ? {color: '#E0BEA2'} : delivery ? {color: '#E0BEA2'}  : null} onClick={(e) => setIsOpen(!isOpen)}  className='hamburger' >
                 <Hamburger />
               </div>
-                <Link style={catalog ? {color: 'black'} : productPage ? {color: 'black'} : order ? {color: 'black'} : favourite ? {color: 'black'} : contacts ? {color: 'black'} : exchange ? {color: 'black'} : delivery ? {color: 'black'} : null}>NEW</Link>
+                <Link style={catalog ? {color: 'black'} : productPage ? {color: 'black'} : order ? {color: 'black'} : favourite ? {color: 'black'} : contacts ? {color: 'black'} : exchange ? {color: 'black'} : delivery ? {color: 'black'} : null} onClick={() => alert("Ошибка Сервера")}>NEW</Link>
                 <Link style={catalog ? {color: 'black'} : productPage ? {color: 'black'} : order ? {color: 'black'} : favourite ? {color: 'black'} : contacts ? {color: 'black'} : exchange ? {color: 'black'} : delivery ? {color: 'black'} : null} to='/catalog'>КАТАЛОГ</Link>
-                <Link style={catalog ? {color: 'black'} : productPage ? {color: 'black'} : order ? {color: 'black'} : favourite ? {color: 'black'} : contacts ? {color: 'black'} : exchange ? {color: 'black'} : delivery ? {color: 'black'} : null}>О НАС</Link>
+                <Link style={catalog ? {color: 'black'} : productPage ? {color: 'black'} : order ? {color: 'black'} : favourite ? {color: 'black'} : contacts ? {color: 'black'} : exchange ? {color: 'black'} : delivery ? {color: 'black'} : null} to='/contacts'>О НАС</Link>
           </div>
           {isOpen && (
                   <div style={catalog ? {backgroundColor: '#E0BEA2'} : productPage ? {backgroundColor: '#E0BEA2'} : order ? {backgroundColor: '#E0BEA2'} : favourite ? {backgroundColor: '#E0BEA2'} : contacts ? {backgroundColor: '#E0BEA2'} : exchange ? {backgroundColor: '#E0BEA2'} : delivery ? {backgroundColor: '#E0BEA2'} : null} className='toggle'>

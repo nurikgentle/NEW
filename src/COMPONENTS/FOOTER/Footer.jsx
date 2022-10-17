@@ -61,8 +61,8 @@ const Footer = () => {
             <img className={upSide} onClick={handleClick} src={footerVector} alt=''/>
             </div>
             <div className={`links ${down}`}>
-              <Link>О Нас</Link>
-              <Link>Контакты</Link>
+              <Link to='/delivery'>О Нас</Link>
+              <Link to='/contacts'>Контакты</Link>
             </div>
           </div>
 
@@ -76,9 +76,9 @@ const Footer = () => {
              <img className={upSid} onClick={handleClic} src={footerVector} alt=''/>
             </div>
             <div className={`links ${dow}`}>
-              <Link>Оплата и доставка</Link>
-              <Link>Условия возврата</Link>
-              <Link>Бонусная система</Link>
+              <Link to='/delivery'>Оплата и доставка</Link>
+              <Link to='/exchange'>Условия возврата</Link>
+              <Link onClick={() => alert("Ошибка Сервера")}>Бонусная система</Link>
             </div>
           </div>
 
@@ -92,9 +92,9 @@ const Footer = () => {
               <img className={upSi} onClick={handleCli} src={footerVector} alt=''/>
             </div>
             <div className={`links ${done}`}>
-              <Link>Избранное</Link>
-              <Link>Публичная оферта</Link>
-              <Link>Политика конфиденциальности</Link>
+              <Link to='/favourite'>Избранное</Link>
+              <Link onClick={() => alert("Ошибка Сервера")}>Публичная оферта</Link>
+              <Link onClick={() => alert("Ошибка Сервера")}>Политика конфиденциальности</Link>
             </div>
           </div>
 
@@ -103,10 +103,10 @@ const Footer = () => {
           <div className='fourth-column'>
             <h1>КОНТАКТЫ</h1>
             <div className='links'>
-              <Link>
-                <Link><img src={instagram} alt='instagram' /></Link>
-                <Link><img style={{ marginLeft: '10px' }} src={telegram} alt='telegram' /></Link>
-              </Link>
+              <a>
+                <a href='https://www.youtube.com/watch?v=qYN5_H_GgRk'><img src={instagram} alt='instagram' /></a>
+                <a href='https://youtu.be/XEjLoHdbVeE'><img style={{ marginLeft: '10px' }} src={telegram} alt='telegram' /></a>
+              </a>
               <p>+(996) 0558994399</p>
               <p style={{ paddingLeft: '16px' }}>info@yanki.com</p>
             </div>
