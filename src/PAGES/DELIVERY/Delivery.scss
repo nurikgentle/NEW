@@ -38,13 +38,31 @@
             top: 6.5px;
         }
     }
-    h1 {
+    .oplata {
         font-family: 'Raleway';
         font-style: normal;
         font-weight: 300;
         font-size: 20px;
         line-height: 23px;
         color: #252525;
+        position: relative;
+        right: 387px;
+
+        @media(max-width: 980px) {
+            right: 270px;
+        }
+        @media(max-width: 722px) {
+            right: 153px;
+        }
+        @media(max-width: 622px) {
+            right: 118px;
+        }
+        @media(max-width: 435px) {
+            right: 90px;
+        }
+        @media(max-width: 400px) {
+            right: 80px;
+        }
     }
     .two-texts {
         display: flex;
