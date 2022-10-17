@@ -71,9 +71,9 @@ const Navbar = ({ size, sizes, search, setSearch }) => {
                   </svg>} 
                 <img className='disappear' onClick={() => signOut(auth)} src={catalog ? userYellow : productPage ? userYellow : order ? userYellow : favourite ? userYellow : contacts ? userYellow : exchange ? userYellow : delivery ? userYellow : User} alt='' />
                 <img onClick={() => navigate("/favourite")} src={catalog ? loveYellow : productPage ? loveYellow : order ? loveYellow : favourite ? loveYellow : contacts ? loveYellow : exchange ? loveYellow : delivery ? loveYellow : Love} alt='' />
-                <div className='numberofitemss'>{sizes}</div>
+                <div onClick={() => navigate("/favourite")} className='numberofitemss'>{sizes}</div>
                 <img onClick={() => navigate("/order")} src={catalog ? cartYellow : productPage ? cartYellow : order ? cartYellow : favourite ? cartYellow : contacts ? cartYellow : exchange ? cartYellow : delivery ? cartYellow : Cart} alt='' />
-                <div className='numberofitems'>{size}</div>
+                <div onClick={() => navigate("/order")} className='numberofitems'>{size}</div>
             </div>
         </nav>
   )
