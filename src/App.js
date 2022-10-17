@@ -11,6 +11,7 @@ import Order from './PAGES/ORDER/Order';
 import Navbar from './COMPONENTS/NAVBAR/Navbar';
 import Favourite from './PAGES/FAVOURITE/Favourite';
 import Contacts from './PAGES/CONTACTS/Contacts';
+import Exchange from './PAGES/EXCHANGE/Exchange';
 
 function App() {
   const {currentUser} = useContext(AuthContext)
@@ -51,18 +52,13 @@ function App() {
       <Routes>
         <Route path='/signup' element={<SignUp />} />
         <Route path='/signin' element={<SignIn />} />
-        <Route path='/' element={<ProtectedRoute>
-            <MainPage size={cart.length} sizes={favourite.length} />
-          </ProtectedRoute>} />
-          <Route path='/catalog' element={<ProtectedRoute><Catalog search={search} setSearch={setSearch} handleFavourite={handleFavourite}  />
-          </ProtectedRoute>} />
-          <Route path='/catalog/:id' element={<ProtectedRoute>
-            <ProductPage handleClick={handleClick} handleFavourite={handleFavourite} />
-          </ProtectedRoute>} />
-          <Route path='/order' element={<ProtectedRoute><Order handleChange={handleChange} cart={cart} size={cart.length} setCart={setCart}  />
-          </ProtectedRoute>} />
-          <Route path='/favourite' element={<ProtectedRoute><Favourite favourite={favourite} /></ProtectedRoute>} />
-          <Route path='/contacts' element={<ProtectedRoute><Contacts /></ProtectedRoute>} />
+        <Route path='/' element={<ProtectedRoute><MainPage size={cart.length} sizes={favourite.length} /> </ProtectedRoute>} />
+        <Route path='/catalog' element={<ProtectedRoute><Catalog search={search} setSearch={setSearch} handleFavourite={handleFavourite}  /></ProtectedRoute>} />
+        <Route path='/catalog/:id' element={<ProtectedRoute><ProductPage handleClick={handleClick} handleFavourite={handleFavourite} /></ProtectedRoute>} />
+        <Route path='/order' element={<ProtectedRoute><Order handleChange={handleChange} cart={cart} size={cart.length} setCart={setCart}  /></ProtectedRoute>} />
+        <Route path='/favourite' element={<ProtectedRoute><Favourite favourite={favourite} /></ProtectedRoute>} />
+        <Route path='/contacts' element={<ProtectedRoute><Contacts /></ProtectedRoute>} />
+        <Route path='/exchange' element={<ProtectedRoute><Exchange /></ProtectedRoute>} />
       </Routes>
     </div>
   );
