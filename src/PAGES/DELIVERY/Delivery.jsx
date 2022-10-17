@@ -12,7 +12,7 @@ const Delivery = () => {
           <img src={switcher} alt='' />
           <Link>Оплата и доставка</Link>
         </div>
-        {/* <h1>Оплата и доставка</h1> */}
+        <h1>Оплата и доставка</h1>
         <div className='two-texts'>
             <div className='first-text'>
                 <h3> Вы можете оплатить покупку одним из ниже перечисленных способов:</h3>
