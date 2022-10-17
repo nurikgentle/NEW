@@ -12,6 +12,7 @@ import Navbar from './COMPONENTS/NAVBAR/Navbar';
 import Favourite from './PAGES/FAVOURITE/Favourite';
 import Contacts from './PAGES/CONTACTS/Contacts';
 import Exchange from './PAGES/EXCHANGE/Exchange';
+import Delivery from './PAGES/DELIVERY/Delivery';
 
 function App() {
   const {currentUser} = useContext(AuthContext)
@@ -59,6 +60,7 @@ function App() {
         <Route path='/favourite' element={<ProtectedRoute><Favourite favourite={favourite} /></ProtectedRoute>} />
         <Route path='/contacts' element={<ProtectedRoute><Contacts /></ProtectedRoute>} />
         <Route path='/exchange' element={<ProtectedRoute><Exchange /></ProtectedRoute>} />
+        <Route path='/delivery' element={<ProtectedRoute><Delivery /></ProtectedRoute>} />
       </Routes>
     </div>
   );
