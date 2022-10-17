@@ -12,7 +12,7 @@ const Contacts = () => {
           <img src={switcher} alt='' />
           <Link>Контакты</Link>
         </div>
-        {/* <h1 className='svyaz'>Связаться с нами</h1> */}
+        <h1 className='svyaz'>Связаться с нами</h1>
         <div className='all-columns'>
             <div className='social-media'>
                 <h3>В социальных сетях</h3>
