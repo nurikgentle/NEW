@@ -144,7 +144,7 @@ const ProductPage = ({ handleClick, handleFavourite }) => {
         </div>
         <Footer />
     </div>
-  )
-}
+    )
+    }
 
-export default ProductPage
+    export default ProductPage
