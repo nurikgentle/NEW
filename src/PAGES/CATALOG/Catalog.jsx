@@ -63,7 +63,6 @@ const Catalog = ({ handleFavourite, search, setSearch }) => {
 
   return (
     <div className='catalog'>
-        {/* <Navbar /> */}
         <div className='switcher'>
           <Link to='/'>Главная</Link>
           <img src={switcher} alt='' />
@@ -99,7 +98,7 @@ const Catalog = ({ handleFavourite, search, setSearch }) => {
               </div>
               <div className='products'>
                   {data.filter((item) => {
-                     return search.toLowerCase() === '' ? item : item.title.toLowerCase().includes(search)
+                     return search.toLowerCase() === '' ? item : item.title.toLowerCase().includes(search.toLowerCase())
                   }).map(item => (
                     <div className='product'>
                        <div className='img'>
