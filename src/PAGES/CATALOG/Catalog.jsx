@@ -59,6 +59,10 @@ const Catalog = ({ handleFavourite, search, setSearch }) => {
     console.log("SORTED", sorted);
     setData(sorted);
   }
+  //SEARCH FILTER
+  const filteredData = data.filter((item) => {
+    return search.toLowerCase() === '' ? item : item.title.toLowerCase().includes(search.toLowerCase())
+ })
 
 
   return (
@@ -97,9 +101,7 @@ const Catalog = ({ handleFavourite, search, setSearch }) => {
                 <SortBy sortByExpensive={sortByExpensive} sortByAlphabet={sortByAlphabet} sortBySize={sortBySize} />
               </div>
               <div className='products'>
-                  {data.filter((item) => {
-                     return search.toLowerCase() === '' ? item : item.title.toLowerCase().includes(search.toLowerCase())
-                  }).map(item => (
+                  {filteredData.map(item => (
                     <div className='product'>
                        <div className='img'>
                           <img onClick={() => navigate(`${item.id}`)} src={item.imgs[0].imgBig} alt=''/>
