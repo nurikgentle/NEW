@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import Footer from '../../COMPONENTS/FOOTER/Footer'
 import './ProductPage.scss'
 import switcher from '../../ASSETS/switcher.svg'
@@ -17,7 +17,6 @@ import liked from '../../ASSETS/liked.svg'
 const ProductPage = ({ handleClick, handleFavourite }) => {
   
   const [toggle, setToggle] = useState(false)
-  const navigate = useNavigate()
   const {products} = useContext(AuthContext)
   const [open, setOpen] = useState(true)
   let down = open ? 'reverse' : null
