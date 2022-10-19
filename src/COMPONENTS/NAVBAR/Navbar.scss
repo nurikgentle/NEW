@@ -41,7 +41,7 @@ nav {
     justify-content: center;
     gap: 60px;
     position: relative;
-
+    z-index: 1000;
     @include smaller {
         gap: 30px;
     }

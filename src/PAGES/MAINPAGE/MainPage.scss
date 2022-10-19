@@ -37,14 +37,15 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    z-index: 1000;
     position: relative;
     bottom: 60px;
     
 
     .first-container {
         height: 900px;
-        background-color: aqua;
+        // position: relative;
+        // bottom: 60px;
+        // background-color: aqua;
         background: url('../../ASSETS/backround.jpg');
         @include phone {
             background: url("../../ASSETS//single.jpg") !important;

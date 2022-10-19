@@ -43,7 +43,6 @@ const MainPage = ({ size, sizes }) => {
   return (
     <div className='wrapper-all'>
         <div className='first-container'>
-        <Navbar size={size} sizes={sizes} />
           <div className='after-navbar'>
             <h1>Новая Коллекция</h1>
             <div></div>
