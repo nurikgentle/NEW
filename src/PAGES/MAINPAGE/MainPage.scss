@@ -43,9 +43,6 @@
 
     .first-container {
         height: 900px;
-        // position: relative;
-        // bottom: 60px;
-        // background-color: aqua;
         background: url('../../ASSETS/backround.jpg');
         @include phone {
             background: url("../../ASSETS//single.jpg") !important;
