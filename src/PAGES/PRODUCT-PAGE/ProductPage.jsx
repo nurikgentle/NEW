@@ -125,7 +125,7 @@ const ProductPage = ({ handleClick, handleFavourite }) => {
         <h1 className='youlike'>Вам может понравиться</h1>
         <div className='productss'>
                   {products.slice(1, 3).map(item => (
-                    <a href={item.id} className='product'>
+                    <a style={{ textDecoration: 'none' }} href={item.id} className='product'>
                        <div className='img'>
                           <img src={item.imgs[0].imgBig} alt=''/>
                           <img onClick={liking} className='like' src={is} alt=''/>
