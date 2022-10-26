@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./MainPage.scss";
 import { Link, useNavigate } from "react-router-dom";
-import Navbar from "../../COMPONENTS/NAVBAR/Navbar";
 import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";

@@ -119,7 +119,7 @@ const Footer = () => {
         <div className="fourth-column">
           <h1>КОНТАКТЫ</h1>
           <div className="links">
-            <a>
+            <a href=" ">
               <a href="https://www.youtube.com/watch?v=qYN5_H_GgRk">
                 <img src={instagram} alt="instagram" />
               </a>
