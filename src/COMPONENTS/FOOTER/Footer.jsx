@@ -7,6 +7,8 @@ import { useState } from "react";
 import footerVector from "../../ASSETS/footer.svg";
 
 const Footer = () => {
+
+  // DROPDOWNS 
   const [open, setOpen] = useState(false);
   function handleClick() {
     setOpen((open) => !open);
@@ -26,7 +28,6 @@ const Footer = () => {
   let done = op ? "op" : null;
 
   // ANIMATIONS
-
   const [rotate, setRotate] = useState(false);
   function change() {
     setRotate((rotate) => !rotate);

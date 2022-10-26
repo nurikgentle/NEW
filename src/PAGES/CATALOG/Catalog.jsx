@@ -12,17 +12,20 @@ import like from "../../ASSETS/like.svg";
 import liked from "../../ASSETS/liked.svg";
 
 const Catalog = ({ handleFavourite, search, setSearch }) => {
+
+  // THE USESTATES 
   const [toggle, setToggle] = useState(false);
   const navigate = useNavigate();
   const { data, setData } = useContext(AuthContext);
   console.log(data);
 
+  // LIKING THE PRODUCT 
   const liking = () => {
     setToggle((toggle) => !toggle);
   };
   let is = toggle ? liked : like;
 
-  //SORTING DATA
+  //SORTING THE DATA
   const sortByExpensive = () => {
     const sorted = [...data].sort((a, b) => b.price - a.price);
     console.log("SIZE");
@@ -57,6 +60,7 @@ const Catalog = ({ handleFavourite, search, setSearch }) => {
     console.log("SORTED", sorted);
     setData(sorted);
   };
+  
   //SEARCH FILTER
   const filteredData = data.filter((item) => {
     return search.toLowerCase() === ""

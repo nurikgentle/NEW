@@ -18,9 +18,15 @@ import vectorBlack from "../../ASSETS/vectorBlack.svg";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ size, sizes, search, setSearch }) => {
+
+  // BOOLEAN USESTATE 
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState(false);
+
+  // NAVIGATION 
   const navigate = useNavigate();
+
+  // RENDERING THE DATA THROUGH ITS MATCHING PATH 
   const { pathname } = useLocation();
   const catalog = matchPath("/catalog", pathname);
   const productPage = matchPath("/catalog/:id", pathname);

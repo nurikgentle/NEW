@@ -8,6 +8,7 @@ export const AuthContext = createContext();
 export const AuthContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState({});
 
+  // GLOBAL USER INFORMATION 
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
@@ -20,6 +21,7 @@ export const AuthContextProvider = ({ children }) => {
   const [data, setData] = useState([]);
   const products = data;
 
+  // GLOBALLY AVAILABLE DATA 
   useEffect(() => {
     const options = {
       method: "GET",

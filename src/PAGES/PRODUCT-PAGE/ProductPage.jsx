@@ -15,6 +15,8 @@ import { AuthContext } from "../../CONTEXT/AuthContext";
 import liked from "../../ASSETS/liked.svg";
 
 const ProductPage = ({ handleClick, handleFavourite }) => {
+
+  // CHANGING THE STATES   
   const [toggle, setToggle] = useState(false);
   const { products } = useContext(AuthContext);
   const [open, setOpen] = useState(true);
@@ -23,11 +25,13 @@ const ProductPage = ({ handleClick, handleFavourite }) => {
   const [data, setData] = useState();
   console.log("ID", data);
 
+  // LIKING THE PRODUCT 
   const liking = () => {
     setToggle((toggle) => !toggle);
   };
   let is = toggle ? liked : liked;
 
+  // USEEFFECT FETCHING THE DATA
   useEffect(() => {
     const options = {
       method: "GET",

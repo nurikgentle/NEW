@@ -5,6 +5,8 @@ import "./Delivery.scss";
 import switcher from "../../ASSETS/switcher.svg";
 
 const Delivery = () => {
+
+  // DEFAULT WINDOW SCROLL 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

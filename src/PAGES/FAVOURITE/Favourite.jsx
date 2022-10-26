@@ -7,15 +7,18 @@ import like from "../../ASSETS/like.svg";
 import liked from "../../ASSETS/liked.svg";
 
 const Favourite = ({ favourite }) => {
-  console.log("FAVOURITE", favourite);
+
+  // NAVIGATE 
   const navigate = useNavigate();
 
+  // LIKING THE PRODUCT 
   const [toggle, setToggle] = useState(false);
   const liking = () => {
     setToggle((toggle) => !toggle);
   };
   let is = toggle ? liked : like;
 
+  // WINDOW SCROLL 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

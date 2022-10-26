@@ -10,6 +10,7 @@ import { db } from "../../Firebase";
 import { v4 as uuid } from "uuid";
 
 const Order = ({ cart, setCart, handleChange, size, handleFavourite }) => {
+
   // ADD TO CHART // REMOVE // CALCULATIONS
   const [price, setPrice] = useState(0);
   const handleRemove = (id) => {
@@ -17,6 +18,8 @@ const Order = ({ cart, setCart, handleChange, size, handleFavourite }) => {
     setCart(arr);
     handlePrice();
   };
+
+  // CALCULATING THE TOTAL PRICE 
   const handlePrice = () => {
     let ans = 0;
     cart.map((item) => (ans += item.amount * item.price));
@@ -37,7 +40,8 @@ const Order = ({ cart, setCart, handleChange, size, handleFavourite }) => {
   const [mail, setMail] = useState("");
   const anOrder = collection(db, "orders");
   let id = uuid();
-
+  
+  // TRANSERING THE DATA TO DATABASE 
   const handleSubmit = async (e) => {
     e.preventDefault();
 

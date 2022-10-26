@@ -5,6 +5,8 @@ import "./Contacts.scss";
 import switcher from "../../ASSETS/switcher.svg";
 
 const Contacts = () => {
+
+  // DEFAULT WINDOW SCROLL 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

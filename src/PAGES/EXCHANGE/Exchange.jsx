@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import Footer from "../../COMPONENTS/FOOTER/Footer";
 
 const Exchange = () => {
+
+  // SETTING TO DEFAULT WINDOW SCROLL SCALE 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

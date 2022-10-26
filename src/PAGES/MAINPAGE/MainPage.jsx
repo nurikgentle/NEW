@@ -11,11 +11,15 @@ import { useMediaQuery } from "react-responsive";
 import Footer from "../../COMPONENTS/FOOTER/Footer";
 
 const MainPage = ({ size, sizes }) => {
+
+  // THE DATA 
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
+  // RESPONSIVENESS THROUGH USEMEDIAQUERY 
   const bigScreen = useMediaQuery({ query: "(max-width: 1171px)" });
 
+  // THE REQUEST TO SERVER 
   useEffect(() => {
     const options = {
       method: "GET",
