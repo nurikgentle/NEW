@@ -163,6 +163,9 @@
     @media(max-width: 620px) {
         right: 5px;
     }
+    @media(max-width: 380px) {
+        right: -5px;
+    }
   }
   .payments {
     display: flex;
