@@ -19,7 +19,7 @@ const MainPage = ({ size, sizes }) => {
   // RESPONSIVENESS THROUGH USEMEDIAQUERY 
   const bigScreen = useMediaQuery({ query: "(max-width: 1171px)" });
 
-  // THE REQUEST TO SERVER 
+  // A REQUEST TO THE SERVER 
   useEffect(() => {
     const options = {
       method: "GET",
