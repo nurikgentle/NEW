@@ -38,7 +38,7 @@ const Delivery = () => {
           <h4>• Срок доставки: 1–2 дня с момента заказа</h4>
         </div>
       </div>
-      {/* <h3 className='process'>Процесс оформления заказа с помощью LIQPAY:</h3> */}
+      <h3 className='process'>Процесс оформления заказа с помощью LIQPAY:</h3>
       <div className="payments">
         <div className="first-payment">
           <svg
