@@ -1,0 +1,114 @@
+.exchange {
+  max-width: 1140px;
+  min-width: 350px;
+  margin: auto;
+  padding-left: 94px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+
+  @media (max-width: 1037px) {
+    padding-left: 10px;
+  }
+
+  .switcher {
+    margin-top: 40px;
+    display: flex;
+    gap: 11px;
+    @media (max-width: 980px) {
+      margin-left: 50px;
+    }
+    @media (max-width: 640px) {
+      margin-left: 10px;
+    }
+    a {
+      font-family: "Raleway";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 19px;
+      color: #252525;
+      text-decoration: none;
+    }
+    @media (max-width: 352px) {
+      width: 335px;
+      margin-left: 10px;
+    }
+  }
+  .exchangeInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin-top: 10px;
+    .exchangeInfoContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @media (max-width: 980px) {
+        margin-left: 50px;
+      }
+      @media (max-width: 640px) {
+        margin-left: 10px;
+      }
+
+      p {
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 20px;
+        color: #252525;
+        @media (max-width: 558px) {
+          font-size: 14px;
+        }
+      }
+      h4 {
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 23px;
+        color: #252525;
+      }
+      .one {
+        margin-top: -10px;
+        @media (max-width: 558px) {
+          width: 335px;
+        }
+      }
+      @media (max-width: 352px) {
+        width: 335px;
+        margin-left: 10px;
+      }
+    }
+  }
+  .icons {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    align-items: baseline;
+    .iconItem {
+      flex-direction: column;
+      width: 165px;
+      @media (max-width: 352px) {
+        width: 335px;
+      }
+      p {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        color: #252525;
+        font-family: "Raleway";
+        font-style: normal;
+      }
+    }
+  }
+}

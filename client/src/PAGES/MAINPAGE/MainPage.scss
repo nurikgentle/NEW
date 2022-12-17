@@ -1,0 +1,293 @@
+@mixin tablet {
+  @media screen and (max-width: 980px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media screen and (max-width: 655px) {
+    @content;
+  }
+}
+
+@mixin smaller {
+  @media screen and (max-width: 620px) {
+    @content;
+  }
+}
+
+@mixin tiny {
+  @media screen and (max-width: 400px) {
+    @content;
+  }
+}
+
+@mixin extraLittle {
+  @media screen and (max-width: 360px) {
+    @content;
+  }
+}
+
+.wrapper-all {
+  max-width: 1440px;
+  min-width: 300px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: relative;
+  bottom: 60px;
+
+  .first-container {
+    height: 900px;
+    background: url("../../ASSETS/backround.jpg");
+    @include phone {
+      background: url("../../ASSETS//single.jpg") !important;
+      background-size: cover !important;
+    }
+
+    .after-navbar {
+      text-align: center;
+      margin-top: 329px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h1 {
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 46px;
+        line-height: 54px;
+        text-align: center;
+        color: #ffffff;
+        opacity: 0.85;
+      }
+
+      div {
+        width: 120px;
+        height: 1px;
+        background: #ffffff;
+        margin-top: 20px;
+      }
+
+      a {
+        margin-top: 20px;
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #ffffff;
+        text-decoration: none;
+      }
+    }
+  }
+  .second-container {
+    height: 742px;
+    width: 100%;
+
+    h1 {
+      font-family: "Raleway";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 36px;
+      line-height: 42px;
+      color: #252525;
+      margin-top: 100px;
+      margin-left: 10.5%;
+    }
+    .swiper {
+      width: 1150px;
+      margin-top: 20px;
+      .swiper-slide {
+        .swiper-center {
+          text-align: center;
+          cursor: pointer;
+          img {
+            width: 273.75px;
+            height: 400px;
+          }
+          div {
+            font-family: "Raleway";
+            font-style: normal;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 23px;
+            text-align: center;
+            color: #ffffff;
+            background: rgba(224, 190, 162, 0.75);
+            display: inline-block;
+            width: 273.75px;
+            height: 40px;
+            position: relative;
+            bottom: 44px;
+            backdrop-filter: blur(3px);
+            h3 {
+              font-family: "Raleway";
+              font-style: normal;
+              font-weight: 300;
+              font-size: 20px;
+              line-height: 23px;
+              text-align: center;
+              color: #ffffff;
+              display: inline-block;
+              position: relative;
+              top: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .third-container {
+    text-align: center;
+    h1 {
+      font-family: "Raleway";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 36px;
+      line-height: 42px;
+      text-align: center;
+      color: #252525;
+    }
+    .subscription {
+      display: flex;
+      flex-direction: column;
+      input {
+        width: 600px;
+        height: 50px;
+        border: 0.5px solid #252525;
+        margin: auto;
+        margin-top: 50px;
+
+        &::placeholder {
+          font-family: "Raleway";
+          font-style: normal;
+          font-weight: 200;
+          font-size: 16px;
+          line-height: 19px;
+          text-align: center;
+          color: rgba(37, 37, 37, 0.5);
+        }
+      }
+      button {
+        width: 600px;
+        height: 50px;
+        background: #e0bea2;
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #ffffff;
+        border: none;
+        margin: auto;
+        margin-top: 20px;
+      }
+      p {
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 200;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        color: #252525;
+        margin-top: 20px !important;
+        width: 600px;
+        margin: auto;
+      }
+    }
+  }
+  .footer {
+    margin: auto;
+  }
+}
+
+@media (max-width: 1171px) {
+  .swiper {
+    width: 900px !important;
+  }
+}
+@media (max-width: 918px) {
+  .swiper {
+    width: 600px !important;
+  }
+}
+@media (max-width: 613px) {
+  .swiper {
+    width: 400px !important;
+    img {
+      width: 253.75px !important;
+      height: 350px !important;
+    }
+    div {
+      h3 {
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px !important;
+        line-height: 23px;
+        text-align: center;
+        color: #ffffff;
+        position: relative !important;
+        top: 8px;
+        right: 27px !important;
+      }
+    }
+  }
+}
+@media (max-width: 406px) {
+  .swiper {
+    width: 300px !important;
+    img {
+      width: 168.75px !important;
+      height: 250px !important;
+    }
+    div {
+      h3 {
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 15px !important;
+        line-height: 23px;
+        text-align: center;
+        color: #ffffff;
+        position: relative !important;
+        top: 8px;
+        right: 62px !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 631px) {
+  input {
+    width: 400px !important;
+  }
+  button {
+    width: 400px !important;
+  }
+  .subscription {
+    p {
+      width: 400px !important;
+    }
+  }
+}
+@media (max-width: 424px) {
+  input {
+    width: 300px !important;
+  }
+  button {
+    width: 300px !important;
+  }
+  .subscription {
+    p {
+      width: 300px !important;
+    }
+  }
+}

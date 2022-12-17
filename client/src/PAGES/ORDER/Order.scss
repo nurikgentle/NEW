@@ -1,0 +1,473 @@
+@mixin tablet {
+  @media screen and (max-width: 980px) {
+    @content;
+  }
+}
+@mixin phone {
+  @media screen and (max-width: 660px) {
+    @content;
+  }
+}
+@mixin phon {
+  @media screen and (max-width: 620px) {
+    @content;
+  }
+}
+@mixin planshet {
+  @media screen and (max-width: 835px) {
+    @content;
+  }
+}
+
+.order {
+  max-width: 1440px;
+  min-width: 375px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+  text-align: center;
+
+  h2 {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 23px;
+    color: #252525;
+    position: relative;
+    right: 430px;
+    margin-top: 30px;
+
+    @include tablet {
+      right: 269px;
+    }
+    @include phone {
+      right: 233px;
+    }
+    @include phon {
+      right: 143px;
+    }
+  }
+  h6 {
+    font-size: 40px;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 300;
+    line-height: 23px;
+    color: #252525;
+  }
+
+  .switcher {
+    margin: auto;
+    display: flex;
+    gap: 11px;
+    position: relative;
+    margin-top: 40px;
+    right: 400px;
+    a {
+      font-family: "Raleway";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 19px;
+      color: #252525;
+      text-decoration: none;
+    }
+  }
+  .cartProduct {
+    display: flex;
+    justify-content: center;
+    gap: 94px;
+    margin-top: 30px;
+    // background-color: aqua;
+    @include tablet {
+      gap: 5px !important;
+    }
+    @include phon {
+      flex-direction: column;
+    }
+
+    .imag {
+      display: flex;
+      gap: 10px;
+
+      @include phone {
+        gap: 10px;
+      }
+
+      img {
+        width: 95px;
+        height: 110px;
+      }
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 29px;
+
+        @include phone {
+          gap: 10px;
+        }
+        h4 {
+          font-family: "Raleway";
+          font-style: normal;
+          font-weight: 300;
+          font-size: 20px;
+          line-height: 16px;
+          color: #e0bea2;
+        }
+        h3 {
+          font-family: "Raleway";
+          font-style: normal;
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 19px;
+          color: #252525;
+        }
+      }
+    }
+    .color {
+      position: relative;
+      top: 43px;
+      div {
+        width: 24px;
+        height: 24px;
+        border-radius: 50px;
+        border: 0.3px solid #252525;
+      }
+      @include phon {
+        position: relative;
+        top: 5px;
+        left: 40px;
+      }
+    }
+    .size {
+      position: relative;
+      top: 28px;
+
+      @include phon {
+        position: relative;
+        top: -100px;
+        left: 50px;
+      }
+    }
+
+    .count {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      width: 98px;
+      height: 40px;
+      border: 0.5px solid grey;
+      border-radius: 5px;
+      position: relative;
+      top: 37px;
+      z-index: 400000;
+
+      @include phon {
+        position: relative;
+        top: -100px;
+        left: 127px;
+      }
+
+      h5 {
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        font-feature-settings: "pnum" on, "lnum" on;
+        color: #252525;
+      }
+      .add {
+        color: #e0bea2;
+        font-size: 30px;
+        cursor: pointer;
+      }
+      .plus {
+        margin-top: 4px;
+      }
+    }
+    .price {
+      display: flex;
+      gap: 31px;
+
+      @include phon {
+        gap: 10px;
+        position: relative;
+        bottom: 150px;
+        flex-direction: column;
+      }
+
+      h3 {
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        color: #252525;
+        position: relative;
+        top: 46px;
+
+        @include phon {
+          position: relative;
+          top: 50px;
+          left: -70px;
+        }
+      }
+
+      img {
+        height: 25px;
+        width: 25px;
+        position: relative;
+        top: 42px;
+        cursor: pointer;
+
+        @include phon {
+          position: relative;
+          top: 50px;
+          left: 40px;
+        }
+      }
+    }
+  }
+  hr {
+    margin-top: 30px !important;
+    width: 953px;
+    margin: auto;
+  }
+
+  .form {
+    margin-top: 50px;
+    h1 {
+      font-family: "Raleway";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 23px;
+      color: #252525;
+      position: relative;
+      right: 318px;
+
+      @include planshet {
+        right: 0;
+      }
+    }
+    .inputs {
+      .four-inputs {
+        display: grid;
+        grid-template-columns: repeat(2, 4fr);
+        gap: 20px;
+        margin-top: 20px;
+
+        @include planshet {
+          grid-template-columns: repeat(1, 4fr);
+          justify-content: center;
+        }
+
+        input {
+          width: 400px;
+          height: 50px;
+          border: 0.5px solid #252525;
+        }
+      }
+      .two-inputs {
+        display: flex;
+        gap: 20px;
+        margin-top: 20px;
+
+        @include planshet {
+          flex-direction: column;
+        }
+        input {
+          width: 400px;
+          height: 50px;
+          border: 0.5px solid #252525;
+        }
+      }
+      h2 {
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        color: #252525;
+        position: relative;
+        right: 325px;
+
+        @include planshet {
+          right: 0;
+        }
+      }
+      .dostavka {
+        right: 345px;
+
+        @include planshet {
+          right: 0;
+        }
+      }
+    }
+    .ordering {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-top: 30px;
+      h6 {
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        color: #252525;
+        span {
+          font-family: "Raleway";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 19px;
+          text-align: right;
+          color: #252525;
+        }
+      }
+      button {
+        width: 300px;
+        height: 50px;
+        background: #e0bea2;
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #ffffff;
+        border: none;
+      }
+      p {
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 16px;
+        color: #252525;
+        width: 300px;
+        height: 48px;
+      }
+    }
+  }
+}
+
+@media (max-width: 402px) {
+  .order {
+    h2 {
+      right: 120px;
+    }
+  }
+}
+@media (max-width: 360px) {
+  .order {
+    h2 {
+      right: 90px;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .order {
+    hr {
+      width: 630px;
+    }
+  }
+}
+@media (max-width: 660px) {
+  .order {
+    hr {
+      width: 630px;
+    }
+  }
+}
+@media (max-width: 638px) {
+  .order {
+    hr {
+      width: 600px;
+    }
+  }
+}
+@media (max-width: 620px) {
+  .order {
+    hr {
+      width: 250px;
+    }
+  }
+}
+.empty-cart {
+  margin-top: 100px;
+}
+@media (max-width: 626px) {
+  .empty-cart {
+    font-size: 30px !important;
+    width: 300px;
+    line-height: 35px !important;
+  }
+}
+.itogo {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  font-feature-settings: "pnum" on, "lnum" on;
+  color: #252525;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  position: relative;
+  left: -395px;
+
+  span {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #252525;
+    margin-left: 10px;
+  }
+}
+@media (max-width: 960px) {
+  .itogo {
+    left: -240px;
+  }
+}
+@media (max-width: 636px) {
+  .itogo {
+    left: -220px;
+  }
+}
+@media (max-width: 620px) {
+  .itogo {
+    left: -50px;
+  }
+  .switcher {
+    left: -93px;
+  }
+}
+@media (max-width: 360px) {
+  .switcher {
+    left: -43px;
+  }
+  .order {
+    h2 {
+      left: -70px;
+    }
+  }
+}

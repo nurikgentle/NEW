@@ -1,0 +1,200 @@
+@mixin tablet {
+  @media screen and (max-width: 980px) {
+    @content;
+  }
+}
+@mixin smallerTablet {
+  @media screen and (max-width: 760px) {
+    @content;
+  }
+}
+@mixin phone {
+  @media screen and (max-width: 655px) {
+    @content;
+  }
+}
+@mixin smallerPhone {
+  @media screen and (max-width: 621px) {
+    @content;
+  }
+}
+@mixin small {
+  @media screen and (max-width: 401px) {
+    @content;
+  }
+}
+@mixin tiny {
+  @media screen and (max-width: 361px) {
+    @content;
+  }
+}
+@mixin tin {
+  @media screen and (max-width: 337px) {
+    @content;
+  }
+}
+
+.favourite {
+  max-width: 1440px;
+  min-width: 380px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+  text-align: center;
+  .switcher {
+    margin: auto;
+    display: flex;
+    gap: 11px;
+    position: relative;
+    margin-top: 40px;
+    right: 388px;
+    a {
+      font-family: "Raleway";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 19px;
+      color: #252525;
+      text-decoration: none;
+    }
+  }
+  .wrapping {
+    display: grid;
+    width: 950px;
+    grid-template-columns: repeat(3, 4fr);
+    grid-column-gap: 15px;
+    margin-top: 30px;
+    gap: 20px;
+    // background-color: #E0BEA2;
+    margin: auto;
+    margin-top: 20px;
+    @include tablet {
+      grid-template-columns: repeat(2, 4fr);
+      width: 650px;
+    }
+    @include phone {
+      grid-template-columns: repeat(1, 4fr);
+      width: 100%;
+      margin: auto;
+      margin-top: 30px;
+    }
+    @include smallerPhone {
+      margin-left: 0;
+    }
+    .favourites {
+      height: 410px;
+      width: 270px;
+      // background-color: aqua;
+      @include smallerTablet {
+        height: 380px;
+        width: 240px;
+      }
+      @include phone {
+        margin-left: 20%;
+      }
+      @include small {
+        height: 340px;
+        width: 200px;
+      }
+
+      .img {
+        position: relative;
+
+        .like {
+          position: absolute;
+          width: 40px;
+          right: 0;
+          cursor: pointer;
+        }
+      }
+
+      img {
+        width: 270px;
+
+        @include smallerTablet {
+          width: 240px;
+        }
+        @include small {
+          width: 200px;
+        }
+      }
+      .information {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        h4 {
+          font-family: "Raleway";
+          font-style: normal;
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 19px;
+          text-align: center;
+          color: #252525;
+        }
+        h3 {
+          font-family: "Raleway";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 19px;
+          text-align: center;
+          color: #252525;
+        }
+        h5 {
+          font-family: "Raleway";
+          font-style: normal;
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 19px;
+          color: rgba(37, 37, 37, 0.5);
+        }
+        .colors {
+          display: flex;
+          gap: 5px;
+          .a {
+            width: 14px;
+            height: 14px;
+            border: 0.3px solid #252525;
+            border-radius: 50px;
+          }
+          .b {
+            width: 14px;
+            height: 14px;
+            border: 0.3px solid #252525;
+            border-radius: 50px;
+          }
+          .c {
+            width: 14px;
+            height: 14px;
+            border: 0.3px solid #252525;
+            border-radius: 50px;
+          }
+        }
+      }
+      &:hover {
+        box-shadow: 0px 20px 35px #e0bea2;
+        transform: translateY(-5px);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.empty-favourite {
+  font-size: 40px;
+  line-height: 50px;
+  margin-left: 130%;
+}
+@media (max-width: 980px) {
+  .empty-favourite {
+    margin-left: 75%;
+  }
+}
+@media (max-width: 655px) {
+  .empty-favourite {
+    margin-left: 0%;
+  }
+}

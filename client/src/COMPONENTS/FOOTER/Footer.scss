@@ -1,0 +1,267 @@
+footer {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  margin-top: 100px;
+  gap: 100px;
+  text-align: center;
+
+  h1 {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 23px;
+    color: #252525;
+    cursor: pointer;
+  }
+  .first-column {
+    display: flex;
+    flex-direction: column;
+    text-align: left !important;
+    position: relative;
+    margin-bottom: 25px;
+    img {
+      display: none;
+    }
+  }
+  .second-column {
+    display: flex;
+    flex-direction: column;
+    text-align: left !important;
+    position: relative;
+    img {
+      display: none;
+    }
+  }
+  .third-column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: left !important;
+    position: relative;
+    img {
+      display: none;
+    }
+  }
+  .fourth-column {
+    display: flex;
+    flex-direction: column;
+    text-align: left !important;
+  }
+  .links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    a {
+      text-decoration: none;
+      font-family: "Raleway";
+      font-style: normal;
+      font-weight: 200;
+      font-size: 16px;
+      line-height: 19px;
+      color: #252525;
+    }
+  }
+}
+h1 {
+  margin: auto;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #252525;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 962px) {
+  footer {
+    gap: 50px;
+  }
+}
+@media (max-width: 808px) {
+  footer {
+    gap: 30px;
+  }
+}
+@media (max-width: 755px) {
+  footer {
+    gap: 10px;
+    flex-direction: column;
+    .first-column {
+      img {
+        position: absolute;
+        width: 18px;
+        display: block;
+        right: -115px;
+        top: 55px;
+        cursor: pointer;
+      }
+    }
+    .second-column {
+      position: relative;
+      h1 {
+        left: -64px;
+      }
+      img {
+        position: absolute;
+        width: 18px;
+        display: block;
+        right: -115px;
+        top: 55px;
+        cursor: pointer;
+      }
+    }
+    .third-column {
+      position: relative;
+      img {
+        position: absolute;
+        width: 18px;
+        display: block;
+        right: -115px;
+        top: 55px;
+        cursor: pointer;
+      }
+    }
+    .fourth-column {
+      h1 {
+        left: -63px;
+      }
+    }
+    .links {
+      display: none;
+    }
+    .fourth-column {
+      .links {
+        display: flex;
+        align-items: center;
+        p {
+          position: relative;
+          top: 20px;
+        }
+      }
+    }
+  }
+}
+.open {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px;
+  margin-top: 20px;
+  a {
+    text-decoration: none;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 19px;
+    color: #252525;
+  }
+}
+.ope {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px;
+  margin-top: 20px;
+  a {
+    text-decoration: none;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 19px;
+    color: #252525;
+  }
+}
+.op {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px;
+  margin-top: 20px;
+  a {
+    text-decoration: none;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 19px;
+    color: #252525;
+  }
+}
+.line {
+  display: none;
+}
+@media (max-width: 755px) {
+  .line {
+    display: block;
+    width: 335px;
+    height: 0px;
+    border: 0.3px solid #252525;
+    position: relative;
+  }
+
+  .third-column {
+    img {
+      right: -99px !important;
+    }
+  }
+
+  .rotate {
+    transform: rotate(180deg);
+  }
+  .rotat {
+    transform: rotate(180deg);
+    right: -100px !important;
+    position: absolute;
+  }
+  .rota {
+    transform: rotate(180deg);
+    left: 270px !important;
+    position: absolute;
+  }
+}
+@media (max-width: 345px) {
+  .line {
+    display: block;
+    width: 235px;
+    height: 0px;
+    border: 0.3px solid #252525;
+    position: relative;
+  }
+  footer {
+    .first-column {
+      img {
+        right: -62px;
+      }
+    }
+    .second-column {
+      img {
+        right: -62px;
+      }
+    }
+    .third-column {
+      img {
+        right: -47px !important;
+      }
+    }
+  }
+
+  .rotate {
+    transform: rotate(180deg);
+  }
+  .rotat {
+    transform: rotate(180deg);
+    right: -49px !important;
+    position: absolute;
+  }
+  .rota {
+    transform: rotate(180deg);
+    left: 220px !important;
+    position: absolute;
+  }
+}

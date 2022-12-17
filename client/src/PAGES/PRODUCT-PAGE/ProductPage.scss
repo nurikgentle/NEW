@@ -1,0 +1,511 @@
+@mixin tablet {
+  @media screen and (max-width: 980px) {
+    @content;
+  }
+}
+@mixin smallerTablet {
+  @media screen and (max-width: 760px) {
+    @content;
+  }
+}
+@mixin phone {
+  @media screen and (max-width: 655px) {
+    @content;
+  }
+}
+@mixin smallerPhone {
+  @media screen and (max-width: 621px) {
+    @content;
+  }
+}
+@mixin small {
+  @media screen and (max-width: 401px) {
+    @content;
+  }
+}
+@mixin tiny {
+  @media screen and (max-width: 361px) {
+    @content;
+  }
+}
+@mixin tin {
+  @media screen and (max-width: 337px) {
+    @content;
+  }
+}
+
+.productpage {
+  max-width: 1440px;
+  min-width: 382px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+
+  .switcher {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 11px;
+    position: relative;
+    margin-top: 40px;
+    right: 391px;
+    a {
+      font-family: "Raleway";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 19px;
+      color: #252525;
+      text-decoration: none;
+    }
+    .title {
+      position: absolute;
+      left: 178px;
+      width: 160px;
+      top: 1.5px;
+    }
+    .title-img {
+      position: absolute;
+      left: 160px;
+      top: 6.5px;
+    }
+  }
+
+  .about-product {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 30px;
+
+    @include tablet {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .image {
+      display: flex;
+      gap: 10px;
+      // background-color: bisque;
+
+      @include tablet {
+        flex-direction: column;
+        flex-direction: column-reverse;
+        margin-right: 20%;
+      }
+
+      .images {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        @include tablet {
+          flex-direction: row;
+        }
+        img {
+          width: 82px;
+          height: 82px;
+        }
+      }
+      .bigImage {
+        img {
+          width: 450px !important;
+          height: 540px !important;
+        }
+      }
+    }
+    .info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      // background-color: aqua;
+
+      @include tablet {
+        margin-right: 29.5%;
+      }
+      .texts {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        h3 {
+          font-family: "Raleway";
+          font-style: normal;
+          font-weight: 300;
+          font-size: 20px;
+          line-height: 23px;
+          text-align: center;
+          color: #252525;
+        }
+        h4 {
+          font-family: "Raleway";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 19px;
+          text-align: center;
+          color: #252525;
+          margin-top: 20px;
+        }
+        .colors {
+          display: flex;
+          gap: 7.5px;
+          margin-top: 24.5px;
+          div {
+            width: 21px;
+            height: 21px;
+            border: 0.3px solid #252525;
+            border-radius: 50px;
+          }
+        }
+        h5 {
+          font-family: "Raleway";
+          font-style: normal;
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 16px;
+          text-align: center;
+          color: #e0bea2;
+          margin-top: 13px;
+        }
+      }
+      .addToCart {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 20px;
+
+        .dropdown {
+          position: relative;
+          right: 9px;
+        }
+        .buttons {
+          display: flex;
+          flex-direction: row;
+          gap: 20px;
+          .a {
+            width: 160px;
+            height: 45px;
+            left: 760px;
+            top: 372px;
+            background: #e0bea2;
+            font-family: "Raleway";
+            font-style: normal;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 19px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #ffffff;
+            border: none;
+          }
+          .b {
+            width: 160px;
+            height: 45px;
+            left: 1035px;
+            top: 372px;
+            border: 0.5px solid #252525;
+            font-family: "Raleway";
+            font-style: normal;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 19px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #252525;
+          }
+        }
+      }
+      .details {
+        margin-top: 20px;
+        position: relative;
+        .under-details {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 20px;
+
+          .clickable {
+            cursor: pointer;
+          }
+        }
+        hr {
+          margin-top: 10px;
+          width: 343px;
+        }
+        h3 {
+          font-family: "Raleway";
+          font-style: normal;
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 19px;
+          text-align: center;
+          color: #252525;
+        }
+        .care {
+          margin-top: 10px;
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          .consistsof {
+            h4 {
+              font-family: "Raleway";
+              font-style: normal;
+              font-weight: 200;
+              font-size: 14px;
+              line-height: 16px;
+              color: #252525;
+            }
+          }
+          .dontdo {
+            h4 {
+              font-family: "Raleway";
+              font-style: normal;
+              font-weight: 200;
+              font-size: 14px;
+              line-height: 16px;
+              color: #252525;
+            }
+          }
+        }
+        .vectorGrey {
+          position: absolute;
+          right: 0;
+          top: 45px;
+        }
+      }
+    }
+  }
+
+  .productss {
+    display: flex;
+    margin-top: 30px !important;
+    margin: auto;
+    gap: 15px;
+    position: relative;
+    right: 190px;
+    .product {
+      height: 410px;
+      width: 270px;
+      // background-color: aqua;
+      @include smallerTablet {
+        height: 380px;
+        width: 240px;
+      }
+      @include small {
+        height: 340px;
+        width: 200px;
+      }
+
+      .img {
+        position: relative;
+
+        .like {
+          position: absolute;
+          width: 40px;
+          right: 0;
+          cursor: pointer;
+        }
+      }
+
+      img {
+        width: 270px;
+
+        @include smallerTablet {
+          width: 240px;
+        }
+        @include small {
+          width: 200px;
+        }
+      }
+      .information {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        h4 {
+          font-family: "Raleway";
+          font-style: normal;
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 19px;
+          text-align: center;
+          color: #252525;
+        }
+        h3 {
+          font-family: "Raleway";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 19px;
+          text-align: center;
+          color: #252525;
+        }
+        h5 {
+          font-family: "Raleway";
+          font-style: normal;
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 19px;
+          color: rgba(37, 37, 37, 0.5);
+        }
+        .colors {
+          display: flex;
+          gap: 5px;
+          .a {
+            width: 14px;
+            height: 14px;
+            border: 0.3px solid #252525;
+            border-radius: 50px;
+          }
+          .b {
+            width: 14px;
+            height: 14px;
+            border: 0.3px solid #252525;
+            border-radius: 50px;
+          }
+          .c {
+            width: 14px;
+            height: 14px;
+            border: 0.3px solid #252525;
+            border-radius: 50px;
+          }
+        }
+      }
+      &:hover {
+        box-shadow: 0px 20px 35px #e0bea2;
+        transform: translateY(-5px);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .youlike {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: #252525;
+    margin-top: 70px;
+    position: relative;
+    right: 355px;
+  }
+}
+
+@media (max-width: 980px) {
+  .youlike {
+    right: 210px !important;
+  }
+  .productss {
+    right: 100px;
+    flex-direction: column;
+  }
+}
+@media (max-width: 800px) {
+  .youlike {
+    right: 180px !important;
+  }
+  .productss {
+    right: 160px !important;
+    flex-direction: column;
+  }
+}
+@media (max-width: 646px) {
+  .youlike {
+    right: 0px !important;
+  }
+  .productss {
+    right: 0px !important;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 362px) {
+  .title {
+    position: absolute;
+    width: 10px !important;
+    top: -7.5px !important;
+  }
+  .title-img {
+    position: absolute;
+    left: 160px;
+    top: 5.5px !important;
+  }
+}
+.reverse {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 890px) {
+  .image {
+    margin-right: 25% !important;
+  }
+}
+@media (max-width: 656px) {
+  .image {
+    margin-right: 17% !important;
+  }
+}
+@media (max-width: 632px) {
+  .image {
+    margin-right: 13% !important;
+  }
+  .info {
+    margin-right: 20% !important;
+  }
+  .buttons {
+    flex-direction: column !important;
+    .a {
+      width: 340px !important;
+    }
+    .b {
+      width: 340px !important;
+    }
+  }
+}
+@media (max-width: 622px) {
+  .image {
+    margin-right: 0% !important;
+
+    .images {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: center;
+      img {
+        width: 72px !important;
+        height: 72px !important;
+      }
+    }
+    .bigImage {
+      img {
+        width: 200px !important;
+        height: 200px !important;
+      }
+    }
+  }
+  .info {
+    margin-right: 0% !important;
+  }
+}
+
+@media (max-width: 435px) {
+  .bigImage {
+    img {
+      margin-right: -400px !important;
+    }
+  }
+}
+@media (max-width: 382px) {
+  .bigImage {
+    img {
+      margin-right: -260px !important;
+    }
+  }
+  .body {
+    position: relative !important;
+    right: 200px !important;
+  }
+}
