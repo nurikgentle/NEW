@@ -11,34 +11,24 @@ import { useMediaQuery } from "react-responsive";
 import Footer from "../../COMPONENTS/FOOTER/Footer";
 
 const MainPage = ({ size, sizes }) => {
-
-  // THE DATA 
+  // THE DATA
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
-  // RESPONSIVENESS THROUGH USEMEDIAQUERY 
+  // RESPONSIVENESS THROUGH USEMEDIAQUERY
   const bigScreen = useMediaQuery({ query: "(max-width: 1171px)" });
 
-  // A REQUEST TO THE SERVER 
+  // A REQUEST TO THE SERVER
   useEffect(() => {
-    const options = {
-      method: "GET",
-      url: "https://kara-balta.p.rapidapi.com/products",
-      headers: {
-        "X-RapidAPI-Key": "3a51998120msh0c0766059662c27p13690cjsn79a06260df4d",
-        "X-RapidAPI-Host": "kara-balta.p.rapidapi.com",
-      },
-    };
-
-    axios
-      .request(options)
-      .then(function (response) {
-        console.log(response.data);
-        setData(response.data);
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
+    async function fetchData() {
+      try {
+        const result = await axios.get("https://6398cfde29930e2bb3c2bb4f.mockapi.io/w/data");
+        setData(result.data);
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    fetchData();
   }, []);
 
   return (

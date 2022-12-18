@@ -8,7 +8,7 @@ export const AuthContext = createContext();
 export const AuthContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState({});
 
-  // GLOBAL USER INFORMATION 
+  // GLOBAL USER INFORMATION
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
@@ -21,26 +21,17 @@ export const AuthContextProvider = ({ children }) => {
   const [data, setData] = useState([]);
   const products = data;
 
-  // GLOBALLY AVAILABLE DATA 
+  // GLOBALLY AVAILABLE DATA
   useEffect(() => {
-    const options = {
-      method: "GET",
-      url: "https://kara-balta.p.rapidapi.com/products",
-      headers: {
-        "X-RapidAPI-Key": "3a51998120msh0c0766059662c27p13690cjsn79a06260df4d",
-        "X-RapidAPI-Host": "kara-balta.p.rapidapi.com",
-      },
-    };
-
-    axios
-      .request(options)
-      .then(function (response) {
-        console.log(response.data);
-        setData(response.data);
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
+    async function fetchData() {
+      try {
+        const result = await axios.get("https://6398cfde29930e2bb3c2bb4f.mockapi.io/w/data");
+        setData(result.data);
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    fetchData();
   }, []);
 
   return (
