@@ -35,7 +35,7 @@ const ProductPage = ({ handleClick, handleFavourite }) => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const result = await axios.get(`https://6398cfde29930e2bb3c2bb4f.mockapi.io/w/data/${id}`);
+        const result = await axios.get(`https://karabaltalar.onrender.com/products/${id}`);
         setData(result.data);
       } catch (e) {
         console.log(e);
